@@ -1,0 +1,251 @@
+body {
+  margin: 0;
+  background-color: #fff;
+  font-family: "GT America Regular", sans-serif;
+}
+
+.white-bg {
+  background-color: #fff;
+}
+
+.home__products {
+  height: 100vh;
+  width: 100vw;
+  padding: 3.5rem 0 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .home__products {
+    padding: 6rem 0 0rem;
+    height: 80vh;
+    width: 100vw;
+    margin: 0;
+    box-sizing: border-box;
+  }
+}
+
+.home__products-title__inner {
+  font-size: 3.2rem;
+  color: #0e0e0e;
+  font-family: "Times New Roman";
+  text-transform: uppercase;
+  position: relative;
+  z-index: 3;
+}
+
+/* Mobile responsive title */
+@media (max-width: 768px) {
+  .home__products-title__inner {
+    font-size: 2.5rem;
+  }
+}
+
+.swiper-slide-title {
+  letter-spacing: -1px;
+  font-size: clamp(180px, 12vw, 380px);
+  color: transparent;
+  text-transform: uppercase;
+  font-family: "GT America Exp Black", sans-serif;
+  font-weight: 800;
+  line-height: 1em;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 80vw;
+  transform: translate3d(-50%, -50%, 0);
+  height: 1em;
+  text-align: center;
+  opacity: 0.7;
+  -webkit-text-stroke: 3px #cb9b57;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+/* Desktop specific adjustments for longer product names */
+@media (min-width: 769px) {
+  .swiper-slide-title.long-text {
+    left: 43%;
+    transform: translate3d(-45%, -50%, 0);
+  }
+  
+  .swiper-slide-title.louis-text {
+    left: 37%;
+    transform: translate3d(-40%, -50%, 0);
+  }
+}
+
+/* Mobile responsive slide title */
+@media (max-width: 768px) {
+  .swiper-slide-title {
+    font-size: clamp(50px, 12vw, 120px);
+    -webkit-text-stroke: 2px #cb9b57;
+    width: 95vw;
+    top: 35%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+}
+
+.image-360 {
+  width: 100%;
+  margin-top: 80px;
+  overflow: hidden;
+  cursor: ew-resize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile responsive image container */
+@media (max-width: 768px) {
+  .image-360 {
+    margin-top: 120px; /* push image downward */
+    transform: none; /* remove upward offset */
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .swiper-slide-title {
+    font-size: clamp(50px, 12vw, 120px);
+    -webkit-text-stroke: 2px #cb9b57;
+    width: 95vw;
+    top: 50%; /* lower the brand text */
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 1;
+  }
+  
+  .home__products {
+    padding: 3rem 0 0rem;
+    height: 70vh;
+    width: 100vw;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .home__products-title__inner {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Ensure product preview is visible */
+  .product-preview {
+    position: relative;
+    z-index: 2;
+    margin-top: 20px;
+  }
+  
+  .product-preview__image {
+    max-width: 85%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.product-preview {
+  position: relative;
+  z-index: 2;
+}
+
+.product-preview__image {
+  max-width: 80%;
+  height: auto;
+}
+
+/* Pagination Container */
+.swiper-pagination {
+  display: flex !important;
+  justify-content: center;
+  position: relative !important;
+  margin-top: 10rem;
+  gap: 2rem;
+  z-index: 5;
+}
+
+/* Mobile responsive pagination container */
+@media (max-width: 768px) {
+  .swiper-pagination {
+    margin-top: 9rem; /* moved 3rem upward */
+    gap: 1rem;
+  }
+}
+
+/* Pagination Bullet Defaults */
+.swiper-pagination-bullet {
+  width: 120px;
+  height: 150px;
+  background: none;
+  padding: 0;
+  border: none;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile responsive pagination bullets */
+@media (max-width: 768px) {
+  .swiper-pagination-bullet {
+    width: 80px;
+    height: 100px;
+  }
+}
+
+/* Image inside bullet */
+.swiper-pagination-bullet img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Active Thumbnail (Selected Shoe) */
+.swiper-pagination-bullet-active {
+  transform: translateY(-15px);
+  z-index: 2;
+}
+
+/* Mobile responsive active bullet */
+@media (max-width: 768px) {
+  .swiper-pagination-bullet-active {
+    transform: translateY(-10px);
+  }
+}
+
+/* Shadow Circle Behind Active */
+.swiper-pagination-bullet-active::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 20px;
+  background: radial-gradient(ellipse at center, rgba(4, 4, 4, 0.543) 0%, transparent 100%);
+  border-radius: 50%;
+  filter: blur(4px);
+  z-index: -1;
+}
+
+/* Mobile responsive shadow */
+@media (max-width: 768px) {
+  .swiper-pagination-bullet-active::after {
+    width: 60px;
+    height: 15px;
+    bottom: -8px;
+  }
+}

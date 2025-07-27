@@ -1,0 +1,144 @@
+.overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(5, 31, 45, 0.18);
+  z-index: 1000;
+  transition: background 0.3s;
+}
+
+.panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 420px;
+  max-width: 100vw;
+  height: 100vh;
+  background: #fff;
+  z-index: 1001;
+  box-shadow: -4px 0 32px 0 rgba(5, 31, 45, 0.12);
+  display: flex;
+  flex-direction: column;
+  animation: slideInPanel 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideInPanel {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  color: #051f2d;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 32px 0 32px;
+}
+.productImg {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+
+  margin-bottom: 18px;
+
+ 
+}
+.brand {
+  font-size: 1.1rem;
+  font-family: 'Monsterrat';
+  color: #051f2d;
+  font-weight: 700;
+  margin-bottom: 2px;
+  margin-left: 5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.name {
+  font-size: 1.3rem;
+  color: #222;
+  font-weight: 600;
+  font-family: 'Monsterrat';
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.divider {
+  border: none;
+  border-top: 1.5px solid #e5e5e5;
+  margin: 24px 0 0 0;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 32px 32px 0 32px;
+}
+.optionBox {
+  background: transparent;
+  border-radius: 12px;
+  padding: 18px 20px 18px 20px;
+  box-shadow: 0 2px 8px 0 rgba(5, 31, 45, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.optionTitle {
+  font-size: 1.08rem;
+  color: #051f2d;
+  font-weight: 700;
+  margin-bottom: 4px;
+  letter-spacing: 0.03em;
+}
+.optionSub {
+  font-size: 0.98rem;
+  color: #444;
+  margin-bottom: 14px;
+}
+.optionBtn {
+  background: #051f2d;
+  color: #fff;
+  border: none;
+
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-top: 2px;
+}
+.optionBtn:hover{
+background : transparent;
+color : #051f2d;
+border : 1px solid #051f2d;
+}
+.optionBtn:disabled {
+  background: #e5e5e5;
+  color: #aaa;
+  cursor: not-allowed;
+}
+@media (max-width: 600px) {
+  .panel {
+    width: 100vw;
+    min-width: 0;
+    padding: 0;
+  }
+  .productInfo, .options {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .closeBtn {
+    top: 12px;
+    right: 12px;
+    font-size: 1.5rem;
+  }
+} 
