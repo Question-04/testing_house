@@ -7,7 +7,7 @@ function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
     link: new HttpLink({
-      uri: 'http://localhost:8090/query', // <-- CHANGE to your backend URL if needed
+      uri: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT || 'http://localhost:8090/query',
       credentials: 'same-origin',
     }),
     cache: new InMemoryCache(),
