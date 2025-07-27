@@ -195,7 +195,11 @@ export const ProductPage: React.FC<ProductPageProps> = ({ productId, productType
       allKey = 'sneakers';
   }
 
-  const { data, loading, error } = useQuery(QUERY, { variables: { id: productId }, skip: !!productProp });
+  const { data, loading, error } = useQuery(QUERY, { 
+    variables: { id: productId }, 
+    skip: !!productProp,
+    errorPolicy: 'all'
+  });
   const { data: allData } = useQuery(allQuery);
   const [selectedSize, setSelectedSize] = useState<SizePrice | null>(null);
   useStash();
@@ -291,10 +295,16 @@ export const ProductPage: React.FC<ProductPageProps> = ({ productId, productType
   // --- End ScrollTrigger logic ---
 
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  if (error) {
+    console.error('ProductPage error:', error);
+    return <div>Error: {error.message}</div>;
+  }
 
   const product = productProp || data?.[dataKey];
-  if (!product) return <div>Product not found</div>;
+  if (!product) {
+    console.error('No product data found:', { productProp, data, dataKey });
+    return <div>Product not found</div>;
+  }
 
   // Get recommendations from all products
   const allProducts = allData?.[allKey] || [];

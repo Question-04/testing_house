@@ -24,13 +24,17 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id } = context.params!;
   
   try {
+    console.log('Fetching sneaker with ID:', id);
     const { data } = await apolloClient.query({
       query: SNEAKER_QUERY,
       variables: { id },
     });
 
+    console.log('Sneaker data received:', data);
+
     // If no product found, return 404
     if (!data.sneaker) {
+      console.log('No sneaker found for ID:', id);
       return {
         notFound: true,
       };
