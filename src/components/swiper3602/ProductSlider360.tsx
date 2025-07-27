@@ -2,11 +2,22 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import Pagination from 'swiper';
+import dynamic from 'next/dynamic';
+import styles from './ProductSlider.module.css';
+
+// Dynamically import Swiper components to avoid SSR issues
+const Swiper = dynamic(() => import('swiper/react').then(mod => ({ default: mod.Swiper })), {
+  ssr: false,
+  loading: () => <div>Loading...</div>
+});
+
+const SwiperSlide = dynamic(() => import('swiper/react').then(mod => ({ default: mod.SwiperSlide })), {
+  ssr: false
+});
+
+// Import Swiper CSS
 import 'swiper/css';
 import 'swiper/css/pagination';
-import './ProductSlider.css';
 
 // Mobile detection hook
 const useIsMobile = () => {
@@ -102,15 +113,15 @@ const ProductSlider360 = () => {
   };
 
   return (
-    <div className="home__products white-bg">
-      <div className="home__products-title__inner">PLUTUS CHOICE</div>
+    <div className={`${styles.homeProducts} ${styles.whiteBg}`}>
+      <div className={styles.homeProductsTitleInner}>PLUTUS CHOICE</div>
 
-      <div className={`swiper-slide-title ${selectedProduct.name === 'Louis Vuitton' ? 'louis-text' : selectedProduct.name === 'New Balance' ? 'long-text' : ''}`}>
+      <div className={`${styles.swiperSlideTitle} ${selectedProduct.name === 'Louis Vuitton' ? styles.louisText : selectedProduct.name === 'New Balance' ? styles.longText : ''}`}>
         {selectedProduct.name}
       </div>
 
       <Swiper
-        modules={[Pagination]}
+        modules={[]}
         slidesPerView={1}
         pagination={{
           clickable: true,
@@ -122,13 +133,13 @@ const ProductSlider360 = () => {
           setSelectedProduct(displayProducts[swiper.activeIndex]);
           setFrameIndex(0);
         }}
-        className="product-swiper"
+        className={styles.productSwiper}
       >
         {displayProducts.map((product, index) => (
           <SwiperSlide key={index}>
-            <div className="product-preview">
+            <div className={styles.productPreview}>
               <div
-                className="image-360"
+                className={styles.image360}
                 ref={containerRef}
                 onMouseEnter={() => setIsHovering(true)}
                 onMouseMove={handleMouseMove}
@@ -137,7 +148,7 @@ const ProductSlider360 = () => {
                 <img
                   src={product.images360[frameIndex]}
                   alt={product.name}
-                  className="product-preview__image"
+                  className={styles.productPreviewImage}
                   style={{
                     maxWidth: '55%',
                     height: 'auto'
