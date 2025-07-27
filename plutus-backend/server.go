@@ -252,12 +252,21 @@ func menuHandler(w http.ResponseWriter, r *http.Request) {
 
 func corsHandlerFunc(h http.HandlerFunc) http.Handler {
 	return cors.New(cors.Options{
-		AllowedOrigins:   []string{"*"}, // Allow all origins
+		AllowedOrigins: []string{
+			"*", // Allow all origins
+			"https://testing2-blush-ten.vercel.app",
+			"https://final-test-tan.vercel.app",
+			"https://testing-house.onrender.com",
+			"http://localhost:3000",
+			"http://localhost:3001",
+			"http://localhost:8090",
+		},
 		AllowCredentials: true,
 		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowedHeaders:   []string{"*"},
-		ExposedHeaders:   []string{"Content-Length"},
+		ExposedHeaders:   []string{"Content-Length", "Content-Type"},
 		MaxAge:           86400, // 24 hours
+		Debug:            true,  // Enable debug logging
 	}).Handler(http.HandlerFunc(h))
 }
 
@@ -293,14 +302,23 @@ func main() {
 	resolver := &graph.Resolver{DB: db}
 	srv := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: resolver}))
 
-	// ✅ Add CORS here
+	// ✅ Add CORS here with more explicit configuration
 	corsHandler := cors.New(cors.Options{
-		AllowedOrigins:   []string{"*"}, // Allow all origins
+		AllowedOrigins: []string{
+			"*", // Allow all origins
+			"https://testing2-blush-ten.vercel.app",
+			"https://final-test-tan.vercel.app",
+			"https://testing-house.onrender.com",
+			"http://localhost:3000",
+			"http://localhost:3001",
+			"http://localhost:8090",
+		},
 		AllowCredentials: true,
 		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowedHeaders:   []string{"*"},
-		ExposedHeaders:   []string{"Content-Length"},
+		ExposedHeaders:   []string{"Content-Length", "Content-Type"},
 		MaxAge:           86400, // 24 hours
+		Debug:            true,  // Enable debug logging
 	}).Handler(srv)
 
 	http.Handle("/query", corsHandler)                         // ✅ CORS applied here
