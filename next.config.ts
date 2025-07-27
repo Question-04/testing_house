@@ -41,119 +41,142 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'luxurysouq.com',
       },
-      // All CDN domains
+      // CDN domains
       {
         protocol: 'https',
-        hostname: '*.cdn.*',
+        hostname: 'cdn.culture-circle.com',
       },
       {
         protocol: 'https',
-        hostname: 'cdn.*',
+        hostname: 'cdn.findyourkicks.com',
       },
       {
         protocol: 'https',
-        hostname: '*.cloudfront.net',
+        hostname: 'cdn.modesens.com',
       },
       {
         protocol: 'https',
-        hostname: '*.azurefd.net',
+        hostname: 'cdn.shopify.com',
       },
       {
         protocol: 'https',
-        hostname: '*.blob.core.windows.net',
+        hostname: 'cdn-img.poizonapp.com',
       },
       {
         protocol: 'https',
-        hostname: '*.googleapis.com',
+        hostname: 'cdna.lystit.com',
+      },
+      // Cloud services
+      {
+        protocol: 'https',
+        hostname: 'd2cva83hdk3bwc.cloudfront.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'djm0962033frr.cloudfront.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'culturecirclestorage.blob.core.windows.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'storage.googleapis.com',
       },
       // Image hosting services
       {
         protocol: 'https',
-        hostname: '*.gstatic.com',
+        hostname: 'encrypted-tbn0.gstatic.com',
       },
       {
         protocol: 'https',
-        hostname: '*.amazon.com',
+        hostname: 'encrypted-tbn1.gstatic.com',
       },
       {
         protocol: 'https',
-        hostname: '*.ebayimg.com',
+        hostname: 'm.media-amazon.com',
       },
       {
         protocol: 'https',
-        hostname: '*.pinimg.com',
+        hostname: 'i.ebayimg.com',
       },
       {
         protocol: 'https',
-        hostname: '*.stockx.com',
+        hostname: 'i.pinimg.com',
       },
       {
         protocol: 'https',
-        hostname: '*.goat.com',
+        hostname: 'images.stockx.com',
       },
       {
         protocol: 'https',
-        hostname: '*.shopify.com',
+        hostname: 'image.goat.com',
       },
       {
         protocol: 'https',
-        hostname: '*.cloudinary.com',
+        hostname: 'res.cloudinary.com',
       },
-      // Major retail domains
+      // Retail domains
       {
         protocol: 'https',
-        hostname: '*.net-a-porter.com',
-      },
-      {
-        protocol: 'https',
-        hostname: '*.asos-media.com',
+        hostname: 'www.net-a-porter.com',
       },
       {
         protocol: 'https',
-        hostname: '*.lystit.com',
+        hostname: 'images.asos-media.com',
       },
       {
         protocol: 'https',
-        hostname: '*.modesens.com',
+        hostname: 'media-assets.grailed.com',
       },
       {
         protocol: 'https',
-        hostname: '*.grailed.com',
+        hostname: 'media.endclothing.com',
       },
       {
         protocol: 'https',
-        hostname: '*.endclothing.com',
+        hostname: 'hrd-live.cdn.scayle.cloud',
+      },
+      {
+        protocol: 'https',
+        hostname: 'image-cdn.hypb.st',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images-cdn.ubuy.co.in',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.shopstyle-cdn.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.stadiumgoods.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'makeshop-multi-images.akamaized.net',
       },
       // Brand domains
-      {
-        protocol: 'https',
-        hostname: '*.allsaints.com',
-      },
-      {
-        protocol: 'https',
-        hostname: '*.christiandior.com',
-      },
-      {
-        protocol: 'https',
-        hostname: '*.stanley1913.com',
-      },
-      {
-        protocol: 'https',
-        hostname: '*.stanley1913.com.br',
-      },
-      // Scene7 and similar
-      {
-        protocol: 'https',
-        hostname: '*.scene7.com',
-      },
-      // Specific domains that need exact matches
       {
         protocol: 'https',
         hostname: 'allsaints.hk',
       },
       {
         protocol: 'https',
+        hostname: 'www.allsaints.com',
+      },
+      {
+        protocol: 'https',
         hostname: 'assets.ajio.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'assets.christiandior.com',
       },
       {
         protocol: 'https',
@@ -165,8 +188,13 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'cdn-img.poizonapp.com',
+        hostname: 'www.stanley1913.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.stanley1913.com.br',
+      },
+      // Other specific domains
       {
         protocol: 'https',
         hostname: 'crepdogcrew.com',
