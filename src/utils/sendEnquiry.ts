@@ -13,7 +13,7 @@ export async function sendEnquiry(payload: EnquiryPayload): Promise<{ success: b
       createEnquiry(productId: $productId, productName: $productName, productBrand: $productBrand, productImage: $productImage, contact: $contact)
     }
   `;
-  const res = await fetch('http://localhost:8090/query', {
+  const res = await fetch(process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT || 'http://localhost:8090/query', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
