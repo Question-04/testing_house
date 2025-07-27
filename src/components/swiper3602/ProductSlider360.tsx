@@ -130,7 +130,7 @@ const ProductSlider360 = () => {
       setSelectedProduct(newProduct);
       setIsTransitioning(false);
       setSlideDirection(null);
-    }, 400); // Match the CSS animation duration
+    }, 250); // Match the faster CSS animation duration
   };
 
   return (

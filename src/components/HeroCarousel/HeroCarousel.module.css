@@ -1,19 +1,26 @@
 .heroWrapper {
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100vw !important;
   min-height: 100vh;
   background-color: rgb(255, 255, 255);
   overflow-x: hidden;
   position: relative;
   height: 100vh;
   overflow: hidden;
+  left: 50% !important;
+  right: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  max-width: 100vw !important;
+  box-sizing: border-box;
 }
 
 .heroCarousel {
   position: relative;
-  width: 100%;
+  width: 100vw !important;
   height: 100%;
+  max-width: 100vw !important;
 }
 
 /* Background Videos */
@@ -21,14 +28,15 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw !important;
   height: 200vh;
   z-index: 1;
+  max-width: 100vw !important;
 }
 
 .videoContainer {
   position: absolute;
-  width: 100vw;
+  width: 100vw !important;
   height: 100vh;
   top: 0;
   left: 0;
@@ -36,6 +44,7 @@
   opacity: 0;
   transition: opacity 1s ease;
   overflow: hidden;
+  max-width: 100vw !important;
 }
 
 .videoContainer.active {
@@ -43,10 +52,11 @@
 }
 
 .video {
-  width: 100%;
-  height: 100%;
+  width: 100vw !important;
+  height: 100vh;
   object-fit: cover;
   transform: none;
+  max-width: 100vw !important;
 }
 
 /* Foreground Video */
