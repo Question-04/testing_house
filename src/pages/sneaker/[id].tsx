@@ -23,6 +23,12 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const apolloClient = initializeApollo();
   const { id } = context.params!;
   
+  // Debug environment variables
+  console.log('Environment variables:', {
+    NEXT_PUBLIC_GRAPHQL_ENDPOINT: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT,
+    NODE_ENV: process.env.NODE_ENV,
+  });
+  
   try {
     console.log('Fetching sneaker with ID:', id);
     const { data } = await apolloClient.query({
