@@ -8,6 +8,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import './ProductSlider.css';
 
+// Configure Swiper
 SwiperCore.use([Pagination]);
 
 // Mobile detection hook
@@ -115,11 +116,11 @@ const ProductSlider360 = () => {
         slidesPerView={1}
         pagination={{
           clickable: true,
-          renderBullet: (index, className) => {
+          renderBullet: (index: number, className: string) => {
             return `<span class="${className}"><img src="${displayProducts[index].thumb}" class="pagination-thumb"/></span>`;
           },
-        }}
-        onSlideChange={(swiper) => {
+        } as any}
+        onSlideChange={(swiper: any) => {
           setSelectedProduct(displayProducts[swiper.activeIndex]);
           setFrameIndex(0);
         }}
