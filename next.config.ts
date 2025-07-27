@@ -19,7 +19,9 @@ const nextConfig: NextConfig = {
     domains: [
       'localhost',
       '192.168.11.109',
-      'ep-wandering-pine-a8x2p4zl-pooler.eastus2.azure.neon.tech'
+      'ep-wandering-pine-a8x2p4zl-pooler.eastus2.azure.neon.tech',
+      'houseofplutus.mos.ap-southeast-2.sufybkt.com',
+      'luxurysouq.com'
     ],
   },
 };
