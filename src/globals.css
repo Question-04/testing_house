@@ -99,3 +99,80 @@ main {
   background: #000;
   min-height: 100vh;
 }
+
+/* SWIPER GLOBAL STYLES - Required for swiper to work properly */
+.swiper-pagination {
+  display: flex !important;
+  justify-content: center;
+  position: relative !important;
+  margin-top: 10rem;
+  gap: 2rem;
+  z-index: 5;
+}
+
+@media (max-width: 768px) {
+  .swiper-pagination {
+    margin-top: 9rem;
+    gap: 1rem;
+  }
+}
+
+.swiper-pagination-bullet {
+  width: 120px;
+  height: 150px;
+  background: none;
+  padding: 0;
+  border: none;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .swiper-pagination-bullet {
+    width: 80px;
+    height: 100px;
+  }
+}
+
+.swiper-pagination-bullet img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.swiper-pagination-bullet-active {
+  transform: translateY(-15px);
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .swiper-pagination-bullet-active {
+    transform: translateY(-10px);
+  }
+}
+
+.swiper-pagination-bullet-active::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 20px;
+  background: radial-gradient(ellipse at center, rgba(4, 4, 4, 0.543) 0%, transparent 100%);
+  border-radius: 50%;
+  filter: blur(4px);
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .swiper-pagination-bullet-active::after {
+    width: 60px;
+    height: 15px;
+    bottom: -8px;
+  }
+}
