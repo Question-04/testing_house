@@ -38,7 +38,7 @@ const CATEGORIES = [
 ];
 
 const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
-  const { searchData, isPreloaded } = useProductContext();
+  const { searchData } = useProductContext();
   const [input, setInput] = useState('');
   const [results, setResults] = useState<Product[]>([]);
   const [loading, setLoading] = useState(false);
@@ -146,7 +146,6 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
   const handleSearchHistoryClick = (query: string) => {
     setInput(query);
     setActiveCategory('');
-    handleSearch(query);
   };
 
   // Handle close
@@ -181,7 +180,7 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
     if (isOpen && activeCategory === 'sneakers' && !input) {
       handleSearch('', 'sneakers');
     }
-  }, [isOpen, activeCategory, input]);
+  }, [isOpen, activeCategory, input, handleSearch]);
 
   // Reset state when overlay closes
   useEffect(() => {
@@ -274,7 +273,7 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
                 <button onClick={handleCloseClick} style={{marginRight:16,fontSize:'2rem',background:'none',border:'none',cursor:'pointer',color:'#07202c'}}>×</button>
               </div>
             </div>
-            
+
             {/* Search History */}
             {!input && !activeCategory && searchHistory.length > 0 && (
               <div style={{marginBottom: 16}}>
@@ -458,9 +457,9 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
                                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                                   onError={(e) => {
                                     const target = e.target as HTMLImageElement;
-                                    target.style.display = 'none';
-                                    const fallback = target.nextElementSibling as HTMLImageElement;
-                                    if (fallback) fallback.style.display = 'block';
+                                    target.src = '/blue_nav_icons/Blue PLUTUS LOGO.svg';
+                                    target.style.width = '120px';
+                                    target.style.height = '120px';
                                   }}
                                 />
                               )}

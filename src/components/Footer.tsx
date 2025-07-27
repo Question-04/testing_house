@@ -38,7 +38,6 @@ const Footer = () => {
   const router = useRouter();
   // Detect product detail pages: /category/[id]
   const productDetailRegex = /^\/(accessories|apparel|perfume|sneaker|watch)\/[^/]+$/;
-  const isProductPage = productDetailRegex.test(router.pathname);
 
   // Get top brands for each category with fallbacks
   const topSneakerBrands = sneakerBrands?.allSneakerBrands?.slice(0, 4) || ['Balenciaga', 'New Balance', 'Air Jordan', 'Nike'];

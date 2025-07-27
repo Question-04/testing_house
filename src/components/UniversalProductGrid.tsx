@@ -3,6 +3,23 @@ import styles from './apparel/ApparelProductGrid.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 
+interface Product {
+  id: string;
+  brand: string;
+  productName?: string;
+  name?: string;
+  title?: string;
+  images: string[];
+  productLink?: string;
+  link?: string;
+  url?: string;
+  price?: number;
+  type: string;
+  sizePrices?: Array<{ size: string; price: number }>;
+  salePrice?: number;
+  variants?: Array<{ price: number }>;
+}
+
 function normalizeType(type: string) {
   if (!type) return '';
   const map: Record<string, string> = {
@@ -15,30 +32,30 @@ function normalizeType(type: string) {
   return map[type] || type;
 }
 
-function getPrice(product: any) {
+function getPrice(product: Product) {
   if (product.type === 'Sneaker' && product.sizePrices && product.sizePrices.length > 0) {
-    const prices = product.sizePrices.map((sp: any) => sp.price).filter((p: any) => typeof p === 'number');
+    const prices = product.sizePrices.map((sp) => sp.price).filter((p) => typeof p === 'number');
     return prices.length ? Math.min(...prices) : undefined;
   }
   if (product.type === 'Watch' && typeof product.salePrice === 'number') {
     return product.salePrice;
   }
   if (product.type === 'Perfume' && product.variants && product.variants.length > 0) {
-    const prices = product.variants.map((v: any) => v.price).filter((p: any) => typeof p === 'number');
+    const prices = product.variants.map((v) => v.price).filter((p) => typeof p === 'number');
     return prices.length ? Math.min(...prices) : undefined;
   }
   if (product.type === 'Apparel' && product.sizePrices && product.sizePrices.length > 0) {
-    const prices = product.sizePrices.map((sp: any) => sp.price).filter((p: any) => typeof p === 'number');
+    const prices = product.sizePrices.map((sp) => sp.price).filter((p) => typeof p === 'number');
     return prices.length ? Math.min(...prices) : undefined;
   }
   if (product.type === 'Accessory' && product.sizePrices && product.sizePrices.length > 0) {
-    const prices = product.sizePrices.map((sp: any) => sp.price).filter((p: any) => typeof p === 'number');
+    const prices = product.sizePrices.map((sp) => sp.price).filter((p) => typeof p === 'number');
     return prices.length ? Math.min(...prices) : undefined;
   }
   return undefined;
 }
 
-function getHref(product: any) {
+function getHref(product: Product) {
   if (product.type === 'Sneaker') return `/sneaker/${product.id}`;
   if (product.type === 'Watch') return `/watch/${product.id}`;
   if (product.type === 'Perfume') return `/perfume/${product.id}`;
@@ -47,15 +64,15 @@ function getHref(product: any) {
   return '#';
 }
 
-function getTitle(product: any) {
+function getTitle(product: Product) {
   return product.productName || product.name || product.title || '';
 }
 
-function getBrand(product: any) {
+function getBrand(product: Product) {
   return product.brand || '';
 }
 
-function getImage(product: any) {
+function getImage(product: Product) {
   if (product.images && product.images.length > 0) return product.images[0];
   return '/blue_nav_icons/Blue PLUTUS LOGO.svg';
 }
@@ -63,7 +80,7 @@ function getImage(product: any) {
 
 import ProductGridSkeleton from './ProductGridSkeleton';
 
-const UniversalProductGrid: React.FC<{ products: any[]; loading?: boolean; isMobile?: boolean }> = ({ products, loading = false, isMobile = false }) => {
+const UniversalProductGrid: React.FC<{ products: Product[]; loading?: boolean; isMobile?: boolean }> = ({ products, loading = false, isMobile = false }) => {
   if (loading) {
     return <ProductGridSkeleton count={8} />;
   }
@@ -103,7 +120,7 @@ const UniversalProductGrid: React.FC<{ products: any[]; loading?: boolean; isMob
                 <div className={styles.priceRow}>
                   <span className={styles.startingFrom}>starting from</span>
                   <span className={styles.price}>
-                    {typeof getPrice(product) === 'number' ? `Rs ${getPrice(product).toLocaleString()}` : '-'}
+                    {typeof getPrice(product) === 'number' ? `Rs ${getPrice(product)?.toLocaleString()}` : '-'}
                   </span>
                 </div>
               </div>

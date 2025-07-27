@@ -317,9 +317,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ productId, productType
 
   const mockDescription = product.description || 'With crisp detailing and nostalgic blue accents, this 2024 release captures the essence of vintage basketball with a modern edge.';
 
-  const _currentSize = selectedSize || (product.sizePrices ? product.sizePrices[0] : null);
-
-
+  // const _currentSize = selectedSize || (product.sizePrices ? product.sizePrices[0] : null); // Commented out unused variable
 
   const display = getDisplayFields(product, productType);
 
