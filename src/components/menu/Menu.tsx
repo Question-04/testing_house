@@ -153,7 +153,7 @@ const Menu = () => {
       const loadMenuData = async () => {
         setLoading(true);
         try {
-          const res = await fetch(process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT?.replace('/query', '/api/menu') || 'http://localhost:8090/api/menu');
+          const res = await fetch(process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT?.replace('/query', '/api/menu') || 'https://testing-house.onrender.com/api/menu');
           if (!res.ok) throw new Error('Failed to fetch menu');
           const json = await res.json();
           setData(json);
