@@ -76,25 +76,28 @@ const ProductSlider360 = () => {
   const [selectedProduct, setSelectedProduct] = useState(products[0]);
   const [frameIndex, setFrameIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
+  const [slideDirection, setSlideDirection] = useState<'left' | 'right' | null>(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const lastXRef = useRef<number | null>(null);
+  const previousProductIndex = useRef<number>(0);
   const isMobile = useIsMobile();
 
   // Filter products for mobile (show only 4)
   const displayProducts = isMobile ? products.slice(0, 4) : products;
 
   useEffect(() => {
-    if (!isHovering) {
+    if (!isHovering && !isTransitioning) {
       intervalRef.current = setInterval(() => {
         setFrameIndex((prev) => (prev + 1) % selectedProduct.images360.length);
       }, 150);
     }
     return () => clearInterval(intervalRef.current!);
-  }, [isHovering, selectedProduct]);
+  }, [isHovering, selectedProduct, isTransitioning]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isHovering) return;
+    if (!isHovering || isTransitioning) return;
     const x = e.clientX;
     if (lastXRef.current !== null) {
       const delta = x - lastXRef.current;
@@ -112,6 +115,24 @@ const ProductSlider360 = () => {
     lastXRef.current = null;
   };
 
+  const handleProductChange = (newProduct: typeof products[0], newIndex: number) => {
+    const currentIndex = displayProducts.findIndex(p => p === selectedProduct);
+    const direction = newIndex > currentIndex ? 'right' : 'left';
+    
+    setSlideDirection(direction);
+    setIsTransitioning(true);
+    
+    // Reset frame index for new product
+    setFrameIndex(0);
+    
+    // Update selected product after a short delay to allow animation
+    setTimeout(() => {
+      setSelectedProduct(newProduct);
+      setIsTransitioning(false);
+      setSlideDirection(null);
+    }, 300); // Match the CSS transition duration
+  };
+
   return (
     <div className={`${styles.homeProducts} ${styles.whiteBg}`}>
       <div className={styles.homeProductsTitleInner}>PLUTUS CHOICE</div>
@@ -123,7 +144,7 @@ const ProductSlider360 = () => {
       {/* Main rotating shoe display */}
       <div className={styles.mainShoeContainer}>
         <div
-          className={styles.image360}
+          className={`${styles.image360} ${slideDirection ? styles[`slide${slideDirection.charAt(0).toUpperCase() + slideDirection.slice(1)}`] : ''}`}
           ref={containerRef}
           onMouseEnter={() => setIsHovering(true)}
           onMouseMove={handleMouseMove}
@@ -147,10 +168,7 @@ const ProductSlider360 = () => {
           <div
             key={index}
             className={`${styles.paginationItem} ${selectedProduct === product ? styles.paginationItemActive : ''}`}
-            onClick={() => {
-              setSelectedProduct(product);
-              setFrameIndex(0);
-            }}
+            onClick={() => handleProductChange(product, index)}
           >
             <img
               src={product.thumb}

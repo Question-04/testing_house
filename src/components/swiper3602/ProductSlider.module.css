@@ -36,14 +36,14 @@
 
 .swiperSlideTitle {
   letter-spacing: -1px;
-  font-size: clamp(120px, 8vw, 280px); /* Reduced from 220px to 120px */
+  font-size: clamp(180px, 12vw, 360px); /* Reduced from 220px to 120px */
   color: transparent;
   text-transform: uppercase;
   font-family: "GT America Exp Black", sans-serif;
   font-weight: 800;
   line-height: 1em;
   position: absolute;
-  top: 50%; /* Changed from 45% to 50% */
+  top: 43%; /* Changed from 45% to 50% */
   left: 0;
   width: 100vw;
   transform: translate3d(0, -50%, 0);
@@ -85,6 +85,46 @@
   align-items: center;
   position: relative;
   z-index: 2;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Slide animations */
+.slideLeft {
+  animation: slideLeft 0.3s ease-in-out;
+}
+
+.slideRight {
+  animation: slideRight 0.3s ease-in-out;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-100px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(100px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .productPreviewImage {
