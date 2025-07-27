@@ -120,45 +120,46 @@ const ProductSlider360 = () => {
         {selectedProduct.name}
       </div>
 
-      <Swiper
-        modules={[]}
-        slidesPerView={1}
-        pagination={{
-          clickable: true,
-          renderBullet: (index: number, className: string) => {
-            return `<span class="${className}"><img src="${displayProducts[index].thumb}" class="pagination-thumb"/></span>`;
-          },
-        } as any}
-        onSlideChange={(swiper: any) => {
-          setSelectedProduct(displayProducts[swiper.activeIndex]);
-          setFrameIndex(0);
-        }}
-        className={styles.productSwiper}
-      >
+      {/* Main rotating shoe display */}
+      <div className={styles.mainShoeContainer}>
+        <div
+          className={styles.image360}
+          ref={containerRef}
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        >
+          <img
+            src={selectedProduct.images360[frameIndex]}
+            alt={selectedProduct.name}
+            className={styles.productPreviewImage}
+            style={{
+              maxWidth: '55%',
+              height: 'auto'
+            }}
+          />
+        </div>
+      </div>
+
+      {/* Pagination at bottom */}
+      <div className={styles.paginationContainer}>
         {displayProducts.map((product, index) => (
-          <SwiperSlide key={index}>
-            <div className={styles.productPreview}>
-              <div
-                className={styles.image360}
-                ref={containerRef}
-                onMouseEnter={() => setIsHovering(true)}
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
-              >
-                <img
-                  src={selectedProduct.images360[frameIndex]}
-                  alt={selectedProduct.name}
-                  className={styles.productPreviewImage}
-                  style={{
-                    maxWidth: '55%',
-                    height: 'auto'
-                  }}
-                />
-              </div>
-            </div>
-          </SwiperSlide>
+          <div
+            key={index}
+            className={`${styles.paginationItem} ${selectedProduct === product ? styles.paginationItemActive : ''}`}
+            onClick={() => {
+              setSelectedProduct(product);
+              setFrameIndex(0);
+            }}
+          >
+            <img
+              src={product.thumb}
+              alt={product.name}
+              className={styles.paginationThumb}
+            />
+          </div>
         ))}
-      </Swiper>
+      </div>
     </div>
   );
 };

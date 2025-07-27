@@ -63,9 +63,21 @@
   }
 }
 
+/* Main shoe container */
+.mainShoeContainer {
+  position: relative;
+  z-index: 2;
+  margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+  .mainShoeContainer {
+    margin-top: 160px;
+  }
+}
+
 .image360 {
   width: 100%;
-  margin-top: 60px;
   overflow: hidden;
   cursor: ew-resize;
   display: flex;
@@ -75,24 +87,93 @@
   z-index: 2;
 }
 
-/* Mobile responsive image container */
-@media (max-width: 768px) {
-  .image360 {
-    margin-top: 160px;
-  }
-}
-
-.productPreview {
-  position: relative;
-  z-index: 2;
-}
-
 .productPreviewImage {
   max-width: 55%;
   height: auto;
 }
 
+/* Pagination container at bottom */
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 8rem;
+  position: relative;
+  z-index: 5;
+}
 
+@media (max-width: 768px) {
+  .paginationContainer {
+    margin-top: 6rem;
+    gap: 1rem;
+  }
+}
+
+/* Pagination item */
+.paginationItem {
+  width: 120px;
+  height: 150px;
+  background: none;
+  padding: 0;
+  border: none;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .paginationItem {
+    width: 80px;
+    height: 100px;
+  }
+}
+
+/* Pagination thumbnail */
+.paginationThumb {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Active pagination item */
+.paginationItemActive {
+  transform: translateY(-15px);
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .paginationItemActive {
+    transform: translateY(-10px);
+  }
+}
+
+/* Shadow for active item */
+.paginationItemActive::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 20px;
+  background: radial-gradient(ellipse at center, rgba(4, 4, 4, 0.543) 0%, transparent 100%);
+  border-radius: 50%;
+  filter: blur(4px);
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .paginationItemActive::after {
+    width: 60px;
+    height: 15px;
+    bottom: -8px;
+  }
+}
 
 /* Special text classes */
 .louisText {
