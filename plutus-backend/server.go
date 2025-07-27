@@ -255,11 +255,9 @@ func corsHandlerFunc(h http.HandlerFunc) http.Handler {
 		AllowedOrigins: []string{
 			"*", // Allow all origins
 			"https://testing2-blush-ten.vercel.app",
-			"https://final-test-tan.vercel.app",
-			"https://testing-house.onrender.com",
-			"http://localhost:3000",
-			"http://localhost:3001",
-			"http://localhost:8090",
+			
+	
+		
 		},
 		AllowCredentials: true,
 		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
