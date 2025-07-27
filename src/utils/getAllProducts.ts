@@ -1,4 +1,13 @@
-const GRAPHQL_ENDPOINT = process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT || 'https://testing-house.onrender.com/query';
+// Better environment variable handling
+let GRAPHQL_ENDPOINT = process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT;
+if (!GRAPHQL_ENDPOINT) {
+  // Fallback for different environments
+  if (process.env.NODE_ENV === 'production') {
+    GRAPHQL_ENDPOINT = 'https://testing-house.onrender.com/query';
+  } else {
+    GRAPHQL_ENDPOINT = 'https://testing-house.onrender.com/query';
+  }
+}
 
 const ALL_PRODUCTS_QUERY = `
   query AllProducts {
@@ -11,6 +20,11 @@ const ALL_PRODUCTS_QUERY = `
 `;
 
 export async function getAllProducts() {
+  if (!GRAPHQL_ENDPOINT) {
+    console.error('GRAPHQL_ENDPOINT is not defined');
+    return [];
+  }
+  
   const res = await fetch(GRAPHQL_ENDPOINT, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
