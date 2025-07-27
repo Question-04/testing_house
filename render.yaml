@@ -1,0 +1,25 @@
+services:
+  # Backend Go Service
+  - type: web
+    name: plutus-backend
+    env: go
+    rootDir: plutus-backend
+    buildCommand: go build -o server .
+    startCommand: ./server
+    envVars:
+      - key: NEON_DB_URL
+        sync: false
+      - key: PORT
+        value: 10000
+
+  # Frontend Next.js Service
+  - type: web
+    name: plutus-frontend
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NEXT_PUBLIC_GRAPHQL_ENDPOINT
+        value: https://plutus-backend.onrender.com/query
+      - key: NODE_ENV
+        value: production 
