@@ -130,14 +130,14 @@ const ProductSlider360 = () => {
       setSelectedProduct(newProduct);
       setIsTransitioning(false);
       setSlideDirection(null);
-    }, 300); // Match the CSS transition duration
+    }, 400); // Match the CSS animation duration
   };
 
   return (
     <div className={`${styles.homeProducts} ${styles.whiteBg}`}>
       <div className={styles.homeProductsTitleInner}>PLUTUS CHOICE</div>
 
-      <div className={`${styles.swiperSlideTitle} ${selectedProduct.name === 'Louis Vuitton' ? styles.louisText : selectedProduct.name === 'New Balance' ? styles.longText : ''} ${slideDirection ? styles[`slide${slideDirection.charAt(0).toUpperCase() + slideDirection.slice(1)}`] : ''}`}>
+      <div className={`${styles.swiperSlideTitle} ${selectedProduct.name === 'Louis Vuitton' ? styles.louisText : selectedProduct.name === 'New Balance' ? styles.longText : ''}`}>
         {selectedProduct.name}
       </div>
 
