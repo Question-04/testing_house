@@ -5,7 +5,7 @@ import HeroCarousel from '../components/HeroCarousel/HeroCarousal';
 import InfiniteCardSection from '@/components/infinitescroll/infiniteScroll';
 import TikTokInspiration from '@/components/tik-tok/tik_inspiration';
 import NewArrivals from '@/components/newArrivals/NewArrivals';
-import ProductSlider360 from '@/components/swiper360/ProductSlider360';
+import ProductSlider360 from '@/components/swiper3602/ProductSlider360';
 import HeroShowcase from '@/components/showcase/ShowCase';
 import ShowcaseMoodSection from '@/components/moodmatch/ShowcaseMoodSection';
 import BentoGrid from '@/components/BentoGrid/BentoGrid';
