@@ -3,13 +3,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Pagination } from 'swiper';
+import Pagination from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import './ProductSlider.css';
-
-// Configure Swiper
-SwiperCore.use([Pagination]);
 
 // Mobile detection hook
 const useIsMobile = () => {
@@ -113,6 +110,7 @@ const ProductSlider360 = () => {
       </div>
 
       <Swiper
+        modules={[Pagination]}
         slidesPerView={1}
         pagination={{
           clickable: true,
