@@ -137,7 +137,7 @@ const ProductSlider360 = () => {
     <div className={`${styles.homeProducts} ${styles.whiteBg}`}>
       <div className={styles.homeProductsTitleInner}>PLUTUS CHOICE</div>
 
-      <div className={`${styles.swiperSlideTitle} ${selectedProduct.name === 'Louis Vuitton' ? styles.louisText : selectedProduct.name === 'New Balance' ? styles.longText : ''}`}>
+      <div className={`${styles.swiperSlideTitle} ${selectedProduct.name === 'Louis Vuitton' ? styles.louisText : selectedProduct.name === 'New Balance' ? styles.longText : ''} ${slideDirection ? styles[`slide${slideDirection.charAt(0).toUpperCase() + slideDirection.slice(1)}`] : ''}`}>
         {selectedProduct.name}
       </div>
 
