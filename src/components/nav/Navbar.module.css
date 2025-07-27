@@ -45,33 +45,6 @@
   filter: brightness(1.5);
 }
 
-.stashIconWrapper {
-  position: relative;
-  display: inline-block;
-}
-
-.blinkingDot, .solidDot {
-  position: absolute;
-  top: -4px;
-  right: -2px;
-  width: 16px;
-  height: 16px;
-  background-image: url('/nav/heart.svg'); /* Make sure this SVG exists */
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 2;
-}
-
-.blinkingDot {
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.2; }
-}
-
 /* Mobile styles */
 @media (max-width: 600px) {
   .navbar {

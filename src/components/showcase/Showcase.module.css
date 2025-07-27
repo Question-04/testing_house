@@ -1,13 +1,10 @@
-html, body {
+.showcaseBackground {
   margin: 0;
   padding: 0;
   width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;
-}
-
-.showcaseBackground {
   min-height: 100vh;
   width: 100vw;
   /* background: radial-gradient(ellipse at center, #051f2d 0%, #051f2d 100%); */

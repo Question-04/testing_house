@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import './ProductSlider.css';
+import styles from './ProductSlider.module.css';
 
 // Configure Swiper
 // eslint-disable-next-line react-hooks/rules-of-hooks

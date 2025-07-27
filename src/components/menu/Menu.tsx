@@ -148,7 +148,7 @@ const Menu = () => {
     if (isPreloaded && menuData) {
       setData(menuData);
       setLoading(false);
-      console.log('🚀 Menu loaded instantly from pre-loaded data');
+      // console.log('🚀 Menu loaded instantly from pre-loaded data');
     } else {
       const loadMenuData = async () => {
         setLoading(true);

@@ -42,7 +42,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearchClick, blueIcons }) => {
   }, [router.pathname]);
 
   // Stash functionality
-  const { showStashDot, isBlinking, clearStashDot } = useStash();
+  const { clearStashDot } = useStash();
 
   // Auto-close the menu whenever we navigate to a new route
   useEffect(() => {
@@ -81,46 +81,15 @@ const Navbar: React.FC<NavbarProps> = ({ onSearchClick, blueIcons }) => {
               }}></div>
             )}
           </button>
-         
-          <button 
-            className={styles.iconBtn} 
-            style={{ position: 'relative' }} 
-            onClick={() => {
-              clearStashDot();
-              router.push('/stash');
-            }}
-            aria-label="Stash"
-          >
+          <button className={styles.iconBtn} aria-label="Menu" onClick={() => setIsMenuOpen(true)}>
+            <Image src={isHome ? "/nav/Menu.svg" : (isBlueIcons ? "/blue_nav_icons/Blue menu icon.svg" : "/nav/Menu.svg")} alt="Menu" width={32} height={32} />
+          </button>
+          <button className={styles.iconBtn} aria-label="Stash" onClick={() => {
+            clearStashDot();
+            router.push('/stash');
+          }}>
             <Image src={isHome ? "/nav/STASH.svg" : (isBlueIcons ? "/blue_nav_icons/Blue Stash icon.svg" : "/nav/STASH.svg")} alt="Stash" width={22} height={22} />
-            {showStashDot && (
-              <span className={isBlinking ? styles.blinkingDot : styles.solidDot}></span>
-            )}
           </button>
-
-          <button className={styles.iconBtn} aria-label="Account">
-            <Image src={isHome ? "/nav/ACCOUNT.svg" : (isBlueIcons ? "/blue_nav_icons/Blue account icon.svg" : "/nav/ACCOUNT.svg")} alt="Account" width={32} height={32} />
-          </button>
-          {isMenuOpen ? (
-            <button className={styles.iconBtn} aria-label="Close Menu" onClick={() => setIsMenuOpen(false)}>
-              <span style={{fontSize: 32, color: isHome ? '#fff' : (isBlueIcons ? '#22304a' : '#fff'), lineHeight: 1, fontWeight: 100, display: 'flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32}}>×</span>
-            </button>
-          ) : (
-            <button className={styles.iconBtn} aria-label="Menu" onClick={() => setIsMenuOpen(true)}>
-              <Image src={isHome ? "/nav/Menu.svg" : (isBlueIcons ? "/blue_nav_icons/Blue menu icon.svg" : "/nav/Menu.svg")} alt="Menu" width={32} height={32} />
-              {!isPreloaded && loading && (
-                <div style={{
-                  position: 'absolute',
-                  top: -2,
-                  right: -2,
-                  width: 8,
-                  height: 8,
-                  background: '#ff6b6b',
-                  borderRadius: '50%',
-                  animation: 'pulse 1s infinite'
-                }}></div>
-              )}
-            </button>
-          )}
         </div>
       </nav>
       {isMenuOpen && (

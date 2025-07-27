@@ -9,7 +9,8 @@ import Navbar from '../components/nav/Navbar';
 import SearchOverlay from '../components/SearchOverlay';
 import { getBrandUrl } from '../utils/brandUtils';
 
-console.log('SEARCH PAGE FILE LOADED');
+// Remove console.log for professional deployment
+// console.log('SEARCH PAGE FILE LOADED');
 
 const ALL_SNEAKER_BRANDS = gql`
   query AllSneakerBrands {
@@ -291,12 +292,12 @@ export default function SearchPage() {
 
   // Debug: Log what's happening
   useEffect(() => {
-    console.log('Search term:', search);
-    console.log('Sneakers data:', sneakersData?.sneakers?.length);
-    console.log('Perfumes data:', perfumesData?.perfumes?.length);
-    console.log('Watches data:', watchesData?.watches?.length);
-    console.log('Accessories data:', accessoriesData?.accessories?.length);
-    console.log('Apparel data:', apparelData?.apparel?.length);
+    // console.log('Search term:', search);
+    // console.log('Sneakers data:', sneakersData?.sneakers?.length);
+    // console.log('Perfumes data:', perfumesData?.perfumes?.length);
+    // console.log('Watches data:', watchesData?.watches?.length);
+    // console.log('Accessories data:', accessoriesData?.accessories?.length);
+    // console.log('Apparel data:', apparelData?.apparel?.length);
   }, [search, sneakersData, perfumesData, watchesData, accessoriesData, apparelData]);
 
   // Breadcrumb items

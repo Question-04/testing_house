@@ -12,7 +12,6 @@ import { useStash } from '../components/StashContext';
 import { EnquiryPanelProvider } from '../components/EnquiryPanelContext';
 import EnquiryPanel from '../components/EnquiryPanel';
 import { ProductProvider } from '../context/ProductContext';
-import PerformanceMonitor from '../components/PerformanceMonitor';
 
 const montserrat = Montserrat({ subsets: ['latin'], weight: ['400', '500', '700'] });
 
@@ -33,9 +32,8 @@ function MyApp({ Component, pageProps }: AppProps) {
               <Navbar onSearchClick={() => setIsSearchOpen(true)} />
               <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
               <Component {...pageProps} />
-              <PerformanceMonitor />
+              <Footer />
             </main>
-            <Footer />
           </StashProvider>
         </EnquiryPanelProvider>
       </ProductProvider>

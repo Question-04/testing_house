@@ -1,0 +1,1151 @@
+[09:39:38.166] Running build in Washington, D.C., USA (East) – iad1
+[09:39:38.166] Build machine configuration: 2 cores, 8 GB
+[09:39:38.181] Cloning github.com/Question-04/testing_house (Branch: clean-deployment, Commit: a119c73)
+[09:39:38.297] Previous build caches not available
+[09:39:47.025] Cloning completed: 8.844s
+[09:39:48.992] Running "vercel build"
+[09:39:49.476] Vercel CLI 44.5.0
+[09:39:50.489] Running "install" command: `npm install`...
+[09:39:53.465] npm warn deprecated q@1.5.1: You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
+[09:39:53.465] npm warn deprecated
+[09:39:53.465] npm warn deprecated (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
+[09:40:08.175] 
+[09:40:08.176] added 459 packages, and audited 460 packages in 17s
+[09:40:08.176] 
+[09:40:08.176] 143 packages are looking for funding
+[09:40:08.177]   run `npm fund` for details
+[09:40:08.213] 
+[09:40:08.214] 3 vulnerabilities (2 low, 1 high)
+[09:40:08.214] 
+[09:40:08.214] To address issues that do not require attention, run:
+[09:40:08.214]   npm audit fix
+[09:40:08.215] 
+[09:40:08.215] To address all issues, run:
+[09:40:08.215]   npm audit fix --force
+[09:40:08.215] 
+[09:40:08.215] Run `npm audit` for details.
+[09:40:08.271] Detected Next.js version: 15.3.2
+[09:40:08.272] Running "npm run build"
+[09:40:08.386] 
+[09:40:08.387] > house@0.1.0 build
+[09:40:08.387] > next build
+[09:40:08.387] 
+[09:40:08.997] Attention: Next.js now collects completely anonymous telemetry regarding usage.
+[09:40:08.998] This information is used to shape Next.js' roadmap and prioritize features.
+[09:40:08.999] You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+[09:40:08.999] https://nextjs.org/telemetry
+[09:40:08.999] 
+[09:40:09.101]    ▲ Next.js 15.3.2
+[09:40:09.101] 
+[09:40:09.114]    Linting and checking validity of types ...
+[09:40:11.134] 
+[09:40:11.138]  ⚠ The Next.js plugin was not detected in your ESLint configuration. See https://nextjs.org/docs/app/api-reference/config/eslint#migrating-existing-config
+[09:40:18.385] 
+[09:40:18.385] Failed to compile.
+[09:40:18.385] 
+[09:40:18.385] ./src/components/CategoryMobileFilterOverlay.tsx
+[09:40:18.385] 8:12  Error: 'tab' is defined but never used.  no-unused-vars
+[09:40:18.389] 10:20  Error: 'sort' is defined but never used.  no-unused-vars
+[09:40:18.389] 13:19  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.389] 16:19  Error: 'size' is defined but never used.  no-unused-vars
+[09:40:18.389] 19:26  Error: 'subcategory' is defined but never used.  no-unused-vars
+[09:40:18.389] 22:21  Error: 'gender' is defined but never used.  no-unused-vars
+[09:40:18.389] 25:28  Error: 'concentration' is defined but never used.  no-unused-vars
+[09:40:18.390] 28:30  Error: 'family' is defined but never used.  no-unused-vars
+[09:40:18.390] 31:20  Error: 'color' is defined but never used.  no-unused-vars
+[09:40:18.390] 33:21  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.390] 
+[09:40:18.390] ./src/components/EnquiryPanel.tsx
+[09:40:18.390] 15:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.390] 
+[09:40:18.390] ./src/components/EnquiryPanelContext.tsx
+[09:40:18.390] 14:15  Error: 'product' is defined but never used.  no-unused-vars
+[09:40:18.390] 36:5  Error: 'setTimeout' is not defined.  no-undef
+[09:40:18.390] 
+[09:40:18.390] ./src/components/Footer.tsx
+[09:40:18.391] 6:10  Error: 'useRouter' is defined but never used.  no-unused-vars
+[09:40:18.391] 6:10  Warning: 'useRouter' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.391] 
+[09:40:18.391] ./src/components/HeroCarousel/HeroCarousal.tsx
+[09:40:18.391] 10:35  Error: 'NodeJS' is not defined.  no-undef
+[09:40:18.391] 11:29  Error: 'HTMLVideoElement' is not defined.  no-undef
+[09:40:18.391] 12:31  Error: 'HTMLVideoElement' is not defined.  no-undef
+[09:40:18.391] 35:35  Error: 'clearInterval' is not defined.  no-undef
+[09:40:18.391] 37:32  Error: 'setInterval' is not defined.  no-undef
+[09:40:18.391] 59:37  Error: 'clearInterval' is not defined.  no-undef
+[09:40:18.391] 61:6  Warning: React Hook useEffect has a missing dependency: 'startProgress'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+[09:40:18.392] 64:30  Error: 'HTMLVideoElement' is not defined.  no-undef
+[09:40:18.392] 67:26  Error: 'console' is not defined.  no-undef
+[09:40:18.392] 
+[09:40:18.392] ./src/components/LiveChat.tsx
+[09:40:18.392] 23:29  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.392] 24:34  Error: 'HTMLInputElement' is not defined.  no-undef
+[09:40:18.393] 34:7  Error: 'setTimeout' is not defined.  no-undef
+[09:40:18.393] 42:7  Error: 'setTimeout' is not defined.  no-undef
+[09:40:18.393] 56:7  Error: 'setTimeout' is not defined.  no-undef
+[09:40:18.393] 62:9  Error: 'setTimeout' is not defined.  no-undef
+[09:40:18.393] 68:11  Error: 'setTimeout' is not defined.  no-undef
+[09:40:18.404] 101:11  Error: 'setTimeout' is not defined.  no-undef
+[09:40:18.405] 110:11  Error: 'setTimeout' is not defined.  no-undef
+[09:40:18.405] 
+[09:40:18.405] ./src/components/PerformanceMonitor.tsx
+[09:40:18.405] 10:9  Error: 'process' is not defined.  no-undef
+[09:40:18.405] 
+[09:40:18.406] ./src/components/ProductPage/ComparePrice.tsx
+[09:40:18.406] 23:7  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.406] 32:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.406] 
+[09:40:18.407] ./src/components/ProductPage/Image360Viewer.tsx
+[09:40:18.407] 7:37  Error: 'window' is not defined.  no-undef
+[09:40:18.407] 9:5  Error: 'window' is not defined.  no-undef
+[09:40:18.407] 10:18  Error: 'window' is not defined.  no-undef
+[09:40:18.407] 28:84  Error: 'HTMLImageElement' is not defined.  no-undef
+[09:40:18.409] 48:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.410] 
+[09:40:18.410] ./src/components/ProductPage/MobileImageViewer.tsx
+[09:40:18.410] 6:28  Error: 'HTMLImageElement' is not defined.  no-undef
+[09:40:18.410] 13:31  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.410] 17:43  Error: 'window' is not defined.  no-undef
+[09:40:18.410] 19:5  Error: 'window' is not defined.  no-undef
+[09:40:18.410] 20:18  Error: 'window' is not defined.  no-undef
+[09:40:18.410] 64:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.410] 94:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.410] 122:9  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.410] 
+[09:40:18.410] ./src/components/ProductPage/MobileSizeOverlay.tsx
+[09:40:18.411] 10:14  Error: 'size' is defined but never used.  no-unused-vars
+[09:40:18.411] 
+[09:40:18.411] ./src/components/ProductPage/PerfumeImageViewer.tsx
+[09:40:18.411] 6:28  Error: 'HTMLImageElement' is not defined.  no-undef
+[09:40:18.411] 31:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.411] 
+[09:40:18.411] ./src/components/ProductPage/PriceHistory.tsx
+[09:40:18.411] 10:5  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.411] 
+[09:40:18.411] ./src/components/ProductPage/ProductPage.tsx
+[09:40:18.411] 30:13  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.411] 210:29  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.411] 211:30  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.412] 212:31  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.412] 213:31  Error: 'HTMLImageElement' is not defined.  no-undef
+[09:40:18.412] 217:43  Error: 'window' is not defined.  no-undef
+[09:40:18.412] 219:5  Error: 'window' is not defined.  no-undef
+[09:40:18.412] 220:18  Error: 'window' is not defined.  no-undef
+[09:40:18.412] 237:5  Warning: 'rightPin' is never reassigned. Use 'const' instead.  prefer-const
+[09:40:18.412] 262:5  Warning: 'leftPin' is never reassigned. Use 'const' instead.  prefer-const
+[09:40:18.412] 265:49  Error: 'window' is not defined.  no-undef
+[09:40:18.412] 285:7  Warning: Unused eslint-disable directive (no problems were reported from '@typescript-eslint/no-unused-expressions').
+[09:40:18.412] 287:7  Warning: Unused eslint-disable directive (no problems were reported from '@typescript-eslint/no-unused-expressions').
+[09:40:18.412] 302:17  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.412] 304:14  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.412] 451:36  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.412] 451:41  Error: 'type' is defined but never used.  no-unused-vars
+[09:40:18.413] 451:41  Warning: 'type' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.413] 
+[09:40:18.413] ./src/components/ProductPage/Recommendations.tsx
+[09:40:18.413] 30:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.413] 32:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.413] 38:50  Error: 'HTMLImageElement' is not defined.  no-undef
+[09:40:18.413] 
+[09:40:18.413] ./src/components/ProductPage/SizeChart.tsx
+[09:40:18.413] 32:43  Error: 'window' is not defined.  no-undef
+[09:40:18.413] 34:5  Error: 'window' is not defined.  no-undef
+[09:40:18.413] 35:18  Error: 'window' is not defined.  no-undef
+[09:40:18.413] 
+[09:40:18.413] ./src/components/ProductPage/SizeGrid.tsx
+[09:40:18.413] 12:14  Error: 'size' is defined but never used.  no-unused-vars
+[09:40:18.413] 21:37  Error: 'window' is not defined.  no-undef
+[09:40:18.413] 23:5  Error: 'window' is not defined.  no-undef
+[09:40:18.413] 24:18  Error: 'window' is not defined.  no-undef
+[09:40:18.413] 
+[09:40:18.413] ./src/components/ProductPage/SneakerImageViewer.tsx
+[09:40:18.413] 6:28  Error: 'HTMLImageElement' is not defined.  no-undef
+[09:40:18.413] 18:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.413] 36:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.414] 59:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.414] 76:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.414] 85:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.414] 94:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.414] 109:9  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.414] 
+[09:40:18.414] ./src/components/ProductPage/StaticImageViewer.tsx
+[09:40:18.414] 6:28  Error: 'HTMLImageElement' is not defined.  no-undef
+[09:40:18.414] 16:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.414] 
+[09:40:18.414] ./src/components/SearchOverlay.tsx
+[09:40:18.414] 41:11  Error: 'searchData' is assigned a value but never used.  no-unused-vars
+[09:40:18.414] 41:11  Warning: 'searchData' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.414] 51:27  Error: 'HTMLInputElement' is not defined.  no-undef
+[09:40:18.414] 55:27  Warning: React Hook useCallback received a function whose dependencies are unknown. Pass an inline function instead.  react-hooks/exhaustive-deps
+[09:40:18.415] 65:28  Error: 'URLSearchParams' is not defined.  no-undef
+[09:40:18.415] 71:27  Error: 'fetch' is not defined.  no-undef
+[09:40:18.415] 93:9  Error: 'console' is not defined.  no-undef
+[09:40:18.415] 120:45  Error: 'HTMLInputElement' is not defined.  no-undef
+[09:40:18.415] 166:7  Error: 'fetch' is not defined.  no-undef
+[09:40:18.415] 173:16  Error: 'console' is not defined.  no-undef
+[09:40:18.415] 268:23  Error: 'window' is not defined.  no-undef
+[09:40:18.415] 440:31  Error: 'window' is not defined.  no-undef
+[09:40:18.415] 458:64  Error: 'HTMLImageElement' is not defined.  no-undef
+[09:40:18.415] 
+[09:40:18.415] ./src/components/StashContext.tsx
+[09:40:18.415] 21:16  Error: 'product' is defined but never used.  no-unused-vars
+[09:40:18.415] 22:21  Error: 'productId' is defined but never used.  no-unused-vars
+[09:40:18.415] 23:15  Error: 'productId' is defined but never used.  no-unused-vars
+[09:40:18.415] 37:21  Error: 'localStorage' is not defined.  no-undef
+[09:40:18.420] 42:11  Error: 'console' is not defined.  no-undef
+[09:40:18.421] 51:7  Error: 'localStorage' is not defined.  no-undef
+[09:40:18.421] 59:5  Error: 'setTimeout' is not defined.  no-undef
+[09:40:18.421] 
+[09:40:18.421] ./src/components/UniversalProductGrid.tsx
+[09:40:18.421] 108:48  Error: 'HTMLImageElement' is not defined.  no-undef
+[09:40:18.421] 
+[09:40:18.421] ./src/components/accessories/AccessoriesBrandProductPage.tsx
+[09:40:18.421] 8:8  Error: 'BrandSelector' is defined but never used.  no-unused-vars
+[09:40:18.421] 8:8  Warning: 'BrandSelector' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.421] 62:45  Error: 'window' is not defined.  no-undef
+[09:40:18.421] 64:7  Error: 'window' is not defined.  no-undef
+[09:40:18.427] 65:20  Error: 'window' is not defined.  no-undef
+[09:40:18.427] 72:9  Warning: The 'brands' logical expression could make the dependencies of useMemo Hook (at line 141) change on every render. To fix this, wrap the initialization of 'brands' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.427] 85:9  Warning: The 'accessories' logical expression could make the dependencies of useMemo Hook (at line 91) change on every render. To fix this, wrap the initialization of 'accessories' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.427] 85:9  Warning: The 'accessories' logical expression could make the dependencies of useMemo Hook (at line 100) change on every render. To fix this, wrap the initialization of 'accessories' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.427] 85:9  Warning: The 'accessories' logical expression could make the dependencies of useMemo Hook (at line 112) change on every render. To fix this, wrap the initialization of 'accessories' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.427] 85:9  Warning: The 'accessories' logical expression could make the dependencies of useMemo Hook (at line 141) change on every render. To fix this, wrap the initialization of 'accessories' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.427] 89:29  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.427] 89:63  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.427] 94:29  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.427] 94:63  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.428] 106:6  Warning: React Hook useEffect has a missing dependency: 'priceRange'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+[09:40:18.428] 110:53  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.428] 120:60  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.428] 121:58  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.428] 133:9  Error: 'brandTickerData' is assigned a value but never used.  no-unused-vars
+[09:40:18.428] 133:9  Warning: 'brandTickerData' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.428] 135:46  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.428] 144:9  Error: 'handleBrandClick' is assigned a value but never used.  no-unused-vars
+[09:40:18.428] 144:9  Warning: 'handleBrandClick' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.428] 146:7  Error: 'window' is not defined.  no-undef
+[09:40:18.428] 150:31  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.428] 151:9  Error: 'gridContainerRef' is assigned a value but never used.  no-unused-vars
+[09:40:18.428] 151:9  Warning: 'gridContainerRef' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.428] 151:35  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.428] 152:10  Error: 'gridScrollable' is assigned a value but never used.  no-unused-vars
+[09:40:18.428] 152:10  Warning: 'gridScrollable' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.429] 157:26  Error: 'window' is not defined.  no-undef
+[09:40:18.429] 183:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.429] 236:30  Error: 'document' is not defined.  no-undef
+[09:40:18.429] 249:40  Error: 'window' is not defined.  no-undef
+[09:40:18.429] 297:30  Error: 'document' is not defined.  no-undef
+[09:40:18.429] 417:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.429] 475:30  Error: 'document' is not defined.  no-undef
+[09:40:18.429] 488:40  Error: 'window' is not defined.  no-undef
+[09:40:18.429] 538:30  Error: 'document' is not defined.  no-undef
+[09:40:18.429] 
+[09:40:18.429] ./src/components/accessories/AccessoriesBrandTicker.tsx
+[09:40:18.429] 12:18  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.429] 17:28  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.429] 38:24  Error: 'requestAnimationFrame' is not defined.  no-undef
+[09:40:18.429] 41:18  Error: 'cancelAnimationFrame' is not defined.  no-undef
+[09:40:18.429] 97:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.429] 149:66  Error: 'HTMLSpanElement' is not defined.  no-undef
+[09:40:18.429] 
+[09:40:18.429] ./src/components/accessories/AccessoriesFilterSidebar.tsx
+[09:40:18.429] 8:20  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.429] 12:19  Error: 'range' is defined but never used.  no-unused-vars
+[09:40:18.429] 15:19  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.429] 18:25  Error: 'subcategory' is defined but never used.  no-unused-vars
+[09:40:18.430] 21:20  Error: 'gender' is defined but never used.  no-unused-vars
+[09:40:18.430] 24:18  Error: 'size' is defined but never used.  no-unused-vars
+[09:40:18.430] 26:21  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.430] 31:11  Error: '_onHide' is defined but never used.  no-unused-vars
+[09:40:18.430] 31:11  Warning: '_onHide' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.430] 34:15  Error: '_priceRange' is defined but never used.  no-unused-vars
+[09:40:18.430] 34:15  Warning: '_priceRange' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.430] 35:13  Error: '_minPrice' is defined but never used.  no-unused-vars
+[09:40:18.430] 35:13  Warning: '_minPrice' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.430] 36:13  Error: '_maxPrice' is defined but never used.  no-unused-vars
+[09:40:18.430] 36:13  Warning: '_maxPrice' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.432] 37:18  Error: '_onPriceChange' is defined but never used.  no-unused-vars
+[09:40:18.432] 37:18  Warning: '_onPriceChange' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.432] 
+[09:40:18.433] ./src/components/accessories/AccessoriesMobileFilterOverlay.tsx
+[09:40:18.433] 8:20  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.433] 11:19  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.433] 14:25  Error: 'subcategory' is defined but never used.  no-unused-vars
+[09:40:18.433] 17:20  Error: 'gender' is defined but never used.  no-unused-vars
+[09:40:18.433] 20:18  Error: 'size' is defined but never used.  no-unused-vars
+[09:40:18.433] 22:21  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.433] 47:11  Error: '_setTab' is defined but never used.  no-unused-vars
+[09:40:18.433] 47:11  Warning: '_setTab' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.433] 
+[09:40:18.433] ./src/components/accessories/AccessoriesProductGrid.tsx
+[09:40:18.435] 16:21  Error: 'id' is defined but never used.  no-unused-vars
+[09:40:18.435] 31:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.435] 
+[09:40:18.435] ./src/components/accessories/BrandTicker.tsx
+[09:40:18.435] 12:18  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.435] 17:28  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.435] 38:24  Error: 'requestAnimationFrame' is not defined.  no-undef
+[09:40:18.435] 41:18  Error: 'cancelAnimationFrame' is not defined.  no-undef
+[09:40:18.435] 97:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.435] 149:66  Error: 'HTMLSpanElement' is not defined.  no-undef
+[09:40:18.435] 
+[09:40:18.436] ./src/components/accessories/Pagination.tsx
+[09:40:18.436] 7:18  Error: 'page' is defined but never used.  no-unused-vars
+[09:40:18.436] 
+[09:40:18.436] ./src/components/accessories/SneakerFilterSidebar.tsx
+[09:40:18.436] 8:20  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.436] 12:19  Error: 'range' is defined but never used.  no-unused-vars
+[09:40:18.436] 15:19  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.436] 18:18  Error: 'size' is defined but never used.  no-unused-vars
+[09:40:18.436] 20:21  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.441] 25:3  Error: 'onHide' is defined but never used.  no-unused-vars
+[09:40:18.441] 25:3  Warning: 'onHide' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.441] 28:3  Error: 'priceRange' is defined but never used.  no-unused-vars
+[09:40:18.441] 28:3  Warning: 'priceRange' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.441] 29:3  Error: 'minPrice' is defined but never used.  no-unused-vars
+[09:40:18.441] 29:3  Warning: 'minPrice' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.442] 30:3  Error: 'maxPrice' is defined but never used.  no-unused-vars
+[09:40:18.442] 30:3  Warning: 'maxPrice' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.442] 31:3  Error: 'onPriceChange' is defined but never used.  no-unused-vars
+[09:40:18.442] 31:3  Warning: 'onPriceChange' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.442] 
+[09:40:18.442] ./src/components/accessories/SneakerProductGrid.tsx
+[09:40:18.443] 15:21  Error: 'id' is defined but never used.  no-unused-vars
+[09:40:18.443] 25:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.443] 
+[09:40:18.443] ./src/components/apparel/ApparelBrandProductPage.tsx
+[09:40:18.443] 8:8  Error: 'BrandSelector' is defined but never used.  no-unused-vars
+[09:40:18.444] 8:8  Warning: 'BrandSelector' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.444] 44:118  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.444] 62:45  Error: 'window' is not defined.  no-undef
+[09:40:18.444] 64:7  Error: 'window' is not defined.  no-undef
+[09:40:18.444] 65:20  Error: 'window' is not defined.  no-undef
+[09:40:18.444] 72:9  Warning: The 'brands' logical expression could make the dependencies of useMemo Hook (at line 142) change on every render. To fix this, wrap the initialization of 'brands' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.444] 87:9  Warning: The 'apparels' logical expression could make the dependencies of useMemo Hook (at line 93) change on every render. To fix this, wrap the initialization of 'apparels' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.445] 87:9  Warning: The 'apparels' logical expression could make the dependencies of useMemo Hook (at line 102) change on every render. To fix this, wrap the initialization of 'apparels' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.445] 87:9  Warning: The 'apparels' logical expression could make the dependencies of useMemo Hook (at line 114) change on every render. To fix this, wrap the initialization of 'apparels' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.445] 87:9  Warning: The 'apparels' logical expression could make the dependencies of useMemo Hook (at line 142) change on every render. To fix this, wrap the initialization of 'apparels' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.445] 91:26  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.445] 91:60  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.445] 96:26  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.445] 96:60  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.445] 108:6  Warning: React Hook useEffect has a missing dependency: 'priceRange'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+[09:40:18.446] 112:53  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.446] 122:53  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.446] 123:58  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.446] 134:9  Error: 'brandTickerData' is assigned a value but never used.  no-unused-vars
+[09:40:18.446] 134:9  Warning: 'brandTickerData' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.446] 136:41  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.446] 145:9  Error: 'handleBrandClick' is assigned a value but never used.  no-unused-vars
+[09:40:18.446] 145:9  Warning: 'handleBrandClick' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.446] 147:7  Error: 'window' is not defined.  no-undef
+[09:40:18.446] 151:31  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.446] 152:9  Error: 'gridContainerRef' is assigned a value but never used.  no-unused-vars
+[09:40:18.446] 152:9  Warning: 'gridContainerRef' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.446] 152:35  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.446] 153:10  Error: 'gridScrollable' is assigned a value but never used.  no-unused-vars
+[09:40:18.446] 153:10  Warning: 'gridScrollable' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.446] 158:26  Error: 'window' is not defined.  no-undef
+[09:40:18.446] 184:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.446] 237:30  Error: 'document' is not defined.  no-undef
+[09:40:18.446] 250:40  Error: 'window' is not defined.  no-undef
+[09:40:18.446] 298:30  Error: 'document' is not defined.  no-undef
+[09:40:18.446] 418:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.446] 476:30  Error: 'document' is not defined.  no-undef
+[09:40:18.446] 489:40  Error: 'window' is not defined.  no-undef
+[09:40:18.446] 539:30  Error: 'document' is not defined.  no-undef
+[09:40:18.446] 
+[09:40:18.446] ./src/components/apparel/ApparelBrandTicker.tsx
+[09:40:18.446] 12:18  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.446] 17:28  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.446] 38:24  Error: 'requestAnimationFrame' is not defined.  no-undef
+[09:40:18.446] 41:18  Error: 'cancelAnimationFrame' is not defined.  no-undef
+[09:40:18.446] 97:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.446] 149:66  Error: 'HTMLSpanElement' is not defined.  no-undef
+[09:40:18.446] 
+[09:40:18.446] ./src/components/apparel/ApparelFilterSidebar.tsx
+[09:40:18.447] 8:20  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.447] 12:19  Error: 'range' is defined but never used.  no-unused-vars
+[09:40:18.447] 15:19  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.447] 18:18  Error: 'size' is defined but never used.  no-unused-vars
+[09:40:18.447] 21:25  Error: 'subcategory' is defined but never used.  no-unused-vars
+[09:40:18.447] 24:20  Error: 'gender' is defined but never used.  no-unused-vars
+[09:40:18.447] 26:21  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.447] 31:11  Error: '_onHide' is defined but never used.  no-unused-vars
+[09:40:18.447] 31:11  Warning: '_onHide' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.447] 34:15  Error: '_priceRange' is defined but never used.  no-unused-vars
+[09:40:18.447] 34:15  Warning: '_priceRange' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.447] 35:13  Error: '_minPrice' is defined but never used.  no-unused-vars
+[09:40:18.447] 35:13  Warning: '_minPrice' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.447] 36:13  Error: '_maxPrice' is defined but never used.  no-unused-vars
+[09:40:18.447] 36:13  Warning: '_maxPrice' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.447] 37:18  Error: '_onPriceChange' is defined but never used.  no-unused-vars
+[09:40:18.447] 37:18  Warning: '_onPriceChange' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.447] 
+[09:40:18.447] ./src/components/apparel/ApparelMobileFilterOverlay.tsx
+[09:40:18.447] 8:20  Error: 'value' is defined but never used.  no-unused-vars
+[09:40:18.447] 11:19  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.447] 14:18  Error: 'size' is defined but never used.  no-unused-vars
+[09:40:18.447] 17:25  Error: 'subcategory' is defined but never used.  no-unused-vars
+[09:40:18.447] 20:20  Error: 'gender' is defined but never used.  no-unused-vars
+[09:40:18.447] 22:21  Error: 'value' is defined but never used.  no-unused-vars
+[09:40:18.447] 24:12  Error: 'tab' is defined but never used.  no-unused-vars
+[09:40:18.447] 47:11  Error: '_setTab' is defined but never used.  no-unused-vars
+[09:40:18.447] 47:11  Warning: '_setTab' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.447] 
+[09:40:18.447] ./src/components/apparel/ApparelProductGrid.tsx
+[09:40:18.447] 16:21  Error: 'id' is defined but never used.  no-unused-vars
+[09:40:18.447] 31:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.447] 
+[09:40:18.447] ./src/components/apparel/BrandTicker.tsx
+[09:40:18.447] 12:18  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.447] 17:28  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.447] 38:24  Error: 'requestAnimationFrame' is not defined.  no-undef
+[09:40:18.447] 41:18  Error: 'cancelAnimationFrame' is not defined.  no-undef
+[09:40:18.447] 97:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.447] 149:66  Error: 'HTMLSpanElement' is not defined.  no-undef
+[09:40:18.447] 
+[09:40:18.447] ./src/components/apparel/DynamicSearchFilterSidebar.tsx
+[09:40:18.447] 8:20  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.447] 11:19  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.447] 14:25  Error: 'subcategory' is defined but never used.  no-unused-vars
+[09:40:18.448] 17:20  Error: 'gender' is defined but never used.  no-unused-vars
+[09:40:18.448] 20:30  Error: 'fragranceFamily' is defined but never used.  no-unused-vars
+[09:40:18.448] 23:20  Error: 'color' is defined but never used.  no-unused-vars
+[09:40:18.448] 29:11  Error: '_onHide' is defined but never used.  no-unused-vars
+[09:40:18.448] 29:11  Warning: '_onHide' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.448] 
+[09:40:18.448] ./src/components/apparel/Pagination.tsx
+[09:40:18.448] 7:18  Error: 'page' is defined but never used.  no-unused-vars
+[09:40:18.448] 
+[09:40:18.448] ./src/components/apparel/SneakerFilterSidebar.tsx
+[09:40:18.448] 8:20  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.448] 12:19  Error: 'range' is defined but never used.  no-unused-vars
+[09:40:18.448] 15:19  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.448] 18:18  Error: 'size' is defined but never used.  no-unused-vars
+[09:40:18.448] 20:21  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.448] 25:3  Error: 'onHide' is defined but never used.  no-unused-vars
+[09:40:18.448] 25:3  Warning: 'onHide' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.448] 28:3  Error: 'priceRange' is defined but never used.  no-unused-vars
+[09:40:18.448] 28:3  Warning: 'priceRange' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.448] 29:3  Error: 'minPrice' is defined but never used.  no-unused-vars
+[09:40:18.448] 29:3  Warning: 'minPrice' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.448] 30:3  Error: 'maxPrice' is defined but never used.  no-unused-vars
+[09:40:18.448] 30:3  Warning: 'maxPrice' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.448] 31:3  Error: 'onPriceChange' is defined but never used.  no-unused-vars
+[09:40:18.448] 31:3  Warning: 'onPriceChange' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.448] 
+[09:40:18.448] ./src/components/apparel/SneakerProductGrid.tsx
+[09:40:18.448] 15:21  Error: 'id' is defined but never used.  no-unused-vars
+[09:40:18.448] 25:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.448] 
+[09:40:18.448] ./src/components/home/HomeRecommendations.tsx
+[09:40:18.448] 80:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.448] 82:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.457] 
+[09:40:18.457] ./src/components/loading/LoadingScreen.tsx
+[09:40:18.457] 8:31  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.457] 9:33  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.457] 10:28  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.457] 11:32  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.458] 12:31  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.458] 13:32  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.461] 15:9  Warning: The 'images' array makes the dependencies of useEffect Hook (at line 100) change on every render. To fix this, wrap the initialization of 'images' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.461] 51:59  Error: 'HTMLElement' is not defined.  no-undef
+[09:40:18.461] 107:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.461] 
+[09:40:18.462] ./src/components/menu/Menu.tsx
+[09:40:18.462] 110:37  Error: 'window' is not defined.  no-undef
+[09:40:18.462] 112:5  Error: 'window' is not defined.  no-undef
+[09:40:18.462] 113:18  Error: 'window' is not defined.  no-undef
+[09:40:18.462] 118:37  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.462] 128:67  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.462] 129:67  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.462] 130:65  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.462] 131:67  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.462] 132:71  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.462] 144:30  Error: 'IntersectionObserver' is not defined.  no-undef
+[09:40:18.462] 151:7  Error: 'console' is not defined.  no-undef
+[09:40:18.462] 156:29  Error: 'fetch' is not defined.  no-undef
+[09:40:18.462] 161:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.462] 181:33  Error: 'IntersectionObserver' is not defined.  no-undef
+[09:40:18.462] 185:43  Error: 'HTMLImageElement' is not defined.  no-undef
+[09:40:18.463] 274:11  Warning: Do not use an `<a>` element to navigate to `/stash/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+[09:40:18.463] 
+[09:40:18.463] ./src/components/moodmatch/ShowcaseMoodSection.tsx
+[09:40:18.463] 23:57  Error: 'window' is not defined.  no-undef
+[09:40:18.463] 32:30  Error: 'NodeJS' is not defined.  no-undef
+[09:40:18.463] 33:30  Error: 'NodeJS' is not defined.  no-undef
+[09:40:18.463] 36:29  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.463] 37:29  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.463] 45:27  Error: 'setInterval' is not defined.  no-undef
+[09:40:18.463] 48:7  Error: 'setTimeout' is not defined.  no-undef
+[09:40:18.463] 56:30  Error: 'clearInterval' is not defined.  no-undef
+[09:40:18.463] 67:27  Error: 'setInterval' is not defined.  no-undef
+[09:40:18.463] 70:7  Error: 'setTimeout' is not defined.  no-undef
+[09:40:18.463] 78:30  Error: 'clearInterval' is not defined.  no-undef
+[09:40:18.463] 91:24  Error: 'window' is not defined.  no-undef
+[09:40:18.463] 98:24  Error: 'window' is not defined.  no-undef
+[09:40:18.463] 113:5  Warning: Unused eslint-disable directive (no problems were reported).
+[09:40:18.463] 147:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.463] 173:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.463] 
+[09:40:18.463] ./src/components/newArrivals/NewArrivals.tsx
+[09:40:18.463] 64:43  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.463] 66:24  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.463] 68:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.463] 75:41  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.463] 97:11  Error: 'console' is not defined.  no-undef
+[09:40:18.463] 110:20  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.463] 110:45  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.463] 173:44  Error: 'NodeJS' is not defined.  no-undef
+[09:40:18.463] 174:47  Error: 'NodeJS' is not defined.  no-undef
+[09:40:18.463] 179:31  Error: 'setInterval' is not defined.  no-undef
+[09:40:18.463] 190:28  Error: 'setInterval' is not defined.  no-undef
+[09:40:18.463] 206:45  Error: 'clearInterval' is not defined.  no-undef
+[09:40:18.463] 207:48  Error: 'clearInterval' is not defined.  no-undef
+[09:40:18.463] 255:7  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.463] 
+[09:40:18.463] ./src/components/perfume/BrandTicker.tsx
+[09:40:18.463] 12:18  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.463] 17:28  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.463] 38:24  Error: 'requestAnimationFrame' is not defined.  no-undef
+[09:40:18.463] 41:18  Error: 'cancelAnimationFrame' is not defined.  no-undef
+[09:40:18.463] 97:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.463] 149:66  Error: 'HTMLSpanElement' is not defined.  no-undef
+[09:40:18.463] 
+[09:40:18.463] ./src/components/perfume/Pagination.tsx
+[09:40:18.463] 7:18  Error: 'page' is defined but never used.  no-unused-vars
+[09:40:18.464] 
+[09:40:18.464] ./src/components/perfume/PerfumeBrandProductPage.tsx
+[09:40:18.464] 63:45  Error: 'window' is not defined.  no-undef
+[09:40:18.464] 65:7  Error: 'window' is not defined.  no-undef
+[09:40:18.464] 66:20  Error: 'window' is not defined.  no-undef
+[09:40:18.464] 87:9  Warning: The 'perfumes' logical expression could make the dependencies of useMemo Hook (at line 93) change on every render. To fix this, wrap the initialization of 'perfumes' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.464] 87:9  Warning: The 'perfumes' logical expression could make the dependencies of useMemo Hook (at line 102) change on every render. To fix this, wrap the initialization of 'perfumes' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.464] 91:26  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.464] 91:58  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.464] 96:26  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.464] 96:58  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.464] 108:6  Warning: React Hook useEffect has a missing dependency: 'priceRange'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+[09:40:18.464] 114:6  Warning: React Hook useMemo has an unnecessary dependency: 'inStockOnly'. Either exclude it or remove the dependency array.  react-hooks/exhaustive-deps
+[09:40:18.464] 122:53  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.464] 123:56  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.464] 133:31  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.464] 134:9  Error: 'gridContainerRef' is assigned a value but never used.  no-unused-vars
+[09:40:18.464] 134:9  Warning: 'gridContainerRef' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.464] 134:35  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.464] 135:10  Error: 'gridScrollable' is assigned a value but never used.  no-unused-vars
+[09:40:18.464] 135:10  Warning: 'gridScrollable' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.464] 140:26  Error: 'window' is not defined.  no-undef
+[09:40:18.464] 166:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.464] 219:30  Error: 'document' is not defined.  no-undef
+[09:40:18.464] 232:40  Error: 'window' is not defined.  no-undef
+[09:40:18.464] 280:30  Error: 'document' is not defined.  no-undef
+[09:40:18.464] 404:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.464] 462:30  Error: 'document' is not defined.  no-undef
+[09:40:18.464] 475:40  Error: 'window' is not defined.  no-undef
+[09:40:18.464] 525:30  Error: 'document' is not defined.  no-undef
+[09:40:18.464] 
+[09:40:18.464] ./src/components/perfume/PerfumeBrandTicker.tsx
+[09:40:18.464] 12:18  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.464] 17:28  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.464] 38:24  Error: 'requestAnimationFrame' is not defined.  no-undef
+[09:40:18.464] 41:18  Error: 'cancelAnimationFrame' is not defined.  no-undef
+[09:40:18.464] 97:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.464] 149:66  Error: 'HTMLSpanElement' is not defined.  no-undef
+[09:40:18.464] 
+[09:40:18.464] ./src/components/perfume/PerfumeFilterSidebar.tsx
+[09:40:18.464] 8:20  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.464] 12:19  Error: 'range' is defined but never used.  no-unused-vars
+[09:40:18.464] 15:19  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.464] 18:25  Error: 'subcategory' is defined but never used.  no-unused-vars
+[09:40:18.464] 21:27  Error: 'concentration' is defined but never used.  no-unused-vars
+[09:40:18.464] 24:29  Error: 'fragranceFamily' is defined but never used.  no-unused-vars
+[09:40:18.465] 27:18  Error: 'size' is defined but never used.  no-unused-vars
+[09:40:18.465] 29:21  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.465] 34:11  Error: '_onHide' is defined but never used.  no-unused-vars
+[09:40:18.465] 34:11  Warning: '_onHide' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.465] 37:15  Error: '_priceRange' is defined but never used.  no-unused-vars
+[09:40:18.465] 37:15  Warning: '_priceRange' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.465] 38:13  Error: '_minPrice' is defined but never used.  no-unused-vars
+[09:40:18.465] 38:13  Warning: '_minPrice' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.465] 39:13  Error: '_maxPrice' is defined but never used.  no-unused-vars
+[09:40:18.465] 39:13  Warning: '_maxPrice' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.465] 40:18  Error: '_onPriceChange' is defined but never used.  no-unused-vars
+[09:40:18.465] 40:18  Warning: '_onPriceChange' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.465] 56:16  Error: '_inStockOnly' is defined but never used.  no-unused-vars
+[09:40:18.465] 56:16  Warning: '_inStockOnly' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.465] 57:20  Error: '_onInStockChange' is defined but never used.  no-unused-vars
+[09:40:18.465] 57:20  Warning: '_onInStockChange' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.465] 
+[09:40:18.465] ./src/components/perfume/PerfumeMobileFilterOverlay.tsx
+[09:40:18.465] 8:20  Error: 'value' is defined but never used.  no-unused-vars
+[09:40:18.465] 11:19  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.465] 14:25  Error: 'subcategory' is defined but never used.  no-unused-vars
+[09:40:18.465] 17:27  Error: 'concentration' is defined but never used.  no-unused-vars
+[09:40:18.465] 20:29  Error: 'family' is defined but never used.  no-unused-vars
+[09:40:18.465] 23:18  Error: 'size' is defined but never used.  no-unused-vars
+[09:40:18.465] 25:21  Error: 'value' is defined but never used.  no-unused-vars
+[09:40:18.465] 27:12  Error: 'tab' is defined but never used.  no-unused-vars
+[09:40:18.465] 53:11  Error: '_setTab' is defined but never used.  no-unused-vars
+[09:40:18.465] 53:11  Warning: '_setTab' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.465] 
+[09:40:18.465] ./src/components/perfume/PerfumeProductGrid.tsx
+[09:40:18.465] 18:21  Error: 'id' is defined but never used.  no-unused-vars
+[09:40:18.465] 54:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.465] 59:48  Error: 'HTMLImageElement' is not defined.  no-undef
+[09:40:18.465] 
+[09:40:18.465] ./src/components/perfume/SneakerFilterSidebar.tsx
+[09:40:18.465] 8:20  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.465] 12:19  Error: 'range' is defined but never used.  no-unused-vars
+[09:40:18.465] 15:19  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.465] 18:18  Error: 'size' is defined but never used.  no-unused-vars
+[09:40:18.465] 20:21  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.465] 25:3  Error: 'onHide' is defined but never used.  no-unused-vars
+[09:40:18.465] 25:3  Warning: 'onHide' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.465] 28:3  Error: 'priceRange' is defined but never used.  no-unused-vars
+[09:40:18.465] 28:3  Warning: 'priceRange' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.465] 29:3  Error: 'minPrice' is defined but never used.  no-unused-vars
+[09:40:18.465] 29:3  Warning: 'minPrice' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.465] 30:3  Error: 'maxPrice' is defined but never used.  no-unused-vars
+[09:40:18.465] 30:3  Warning: 'maxPrice' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.465] 31:3  Error: 'onPriceChange' is defined but never used.  no-unused-vars
+[09:40:18.465] 31:3  Warning: 'onPriceChange' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.465] 
+[09:40:18.465] ./src/components/perfume/SneakerProductGrid.tsx
+[09:40:18.465] 15:21  Error: 'id' is defined but never used.  no-unused-vars
+[09:40:18.466] 25:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.466] 
+[09:40:18.466] ./src/components/showcase/ShowCase.tsx
+[09:40:18.466] 28:7  Error: '_GodRaysCanvas' is assigned a value but never used.  no-unused-vars
+[09:40:18.466] 28:7  Warning: '_GodRaysCanvas' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.466] 29:21  Error: React Hook "useRef" is called in function "_GodRaysCanvas" that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word "use".  react-hooks/rules-of-hooks
+[09:40:18.466] 29:28  Error: 'HTMLCanvasElement' is not defined.  no-undef
+[09:40:18.466] 31:3  Error: React Hook "useEffect" is called in function "_GodRaysCanvas" that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word "use".  react-hooks/rules-of-hooks
+[09:40:18.466] 37:32  Error: 'window' is not defined.  no-undef
+[09:40:18.466] 38:33  Error: 'window' is not defined.  no-undef
+[09:40:18.466] 69:5  Error: 'window' is not defined.  no-undef
+[09:40:18.466] 70:18  Error: 'window' is not defined.  no-undef
+[09:40:18.466] 93:33  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.466] 98:47  Error: 'window' is not defined.  no-undef
+[09:40:18.466] 99:20  Error: 'window' is not defined.  no-undef
+[09:40:18.466] 100:5  Error: 'window' is not defined.  no-undef
+[09:40:18.466] 101:18  Error: 'window' is not defined.  no-undef
+[09:40:18.466] 144:13  Error: 'requestAnimationFrame' is not defined.  no-undef
+[09:40:18.466] 146:11  Error: 'requestAnimationFrame' is not defined.  no-undef
+[09:40:18.466] 147:18  Error: 'cancelAnimationFrame' is not defined.  no-undef
+[09:40:18.466] 207:52  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.466] 213:28  Error: 'MouseEvent' is not defined.  no-undef
+[09:40:18.466] 221:5  Error: 'window' is not defined.  no-undef
+[09:40:18.466] 222:5  Error: 'window' is not defined.  no-undef
+[09:40:18.466] 224:7  Error: 'window' is not defined.  no-undef
+[09:40:18.467] 225:7  Error: 'window' is not defined.  no-undef
+[09:40:18.467] 229:53  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.467] 233:52  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.467] 242:9  Error: 'onProgressClick' is assigned a value but never used.  no-unused-vars
+[09:40:18.467] 242:9  Warning: 'onProgressClick' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.467] 242:48  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.467] 246:9  Error: 'onProgressTouch' is assigned a value but never used.  no-unused-vars
+[09:40:18.467] 246:9  Warning: 'onProgressTouch' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.467] 246:48  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.467] 287:23  Error: '_positions' is assigned a value but never used.  no-unused-vars
+[09:40:18.467] 287:23  Warning: '_positions' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.467] 299:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.467] 305:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.468] 
+[09:40:18.468] ./src/components/sneaker/BrandTicker.tsx
+[09:40:18.468] 12:18  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.468] 17:28  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.468] 38:24  Error: 'requestAnimationFrame' is not defined.  no-undef
+[09:40:18.481] 41:18  Error: 'cancelAnimationFrame' is not defined.  no-undef
+[09:40:18.482] 96:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.482] 109:48  Error: 'HTMLImageElement' is not defined.  no-undef
+[09:40:18.482] 152:66  Error: 'HTMLSpanElement' is not defined.  no-undef
+[09:40:18.482] 
+[09:40:18.482] ./src/components/sneaker/Pagination.tsx
+[09:40:18.482] 7:18  Error: 'page' is defined but never used.  no-unused-vars
+[09:40:18.482] 
+[09:40:18.483] ./src/components/sneaker/SneakerBrandProductPage.tsx
+[09:40:18.483] 8:8  Error: 'BrandSelector' is defined but never used.  no-unused-vars
+[09:40:18.483] 8:8  Warning: 'BrandSelector' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.483] 42:118  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.483] 59:45  Error: 'window' is not defined.  no-undef
+[09:40:18.483] 61:7  Error: 'window' is not defined.  no-undef
+[09:40:18.483] 62:20  Error: 'window' is not defined.  no-undef
+[09:40:18.483] 69:63  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.484] 77:57  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.484] 142:26  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.484] 144:35  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.484] 154:26  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.484] 156:35  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.484] 171:6  Warning: React Hook useEffect has a missing dependency: 'priceRange'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+[09:40:18.484] 177:53  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.484] 178:73  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.485] 189:9  Error: 'brandTickerData' is assigned a value but never used.  no-unused-vars
+[09:40:18.485] 189:9  Warning: 'brandTickerData' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.485] 192:41  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.485] 201:9  Error: 'handleBrandClick' is assigned a value but never used.  no-unused-vars
+[09:40:18.485] 201:9  Warning: 'handleBrandClick' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.485] 203:7  Error: 'window' is not defined.  no-undef
+[09:40:18.485] 215:31  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.485] 216:9  Error: 'gridContainerRef' is assigned a value but never used.  no-unused-vars
+[09:40:18.486] 216:9  Warning: 'gridContainerRef' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.486] 216:35  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.486] 217:10  Error: 'gridScrollable' is assigned a value but never used.  no-unused-vars
+[09:40:18.486] 217:10  Warning: 'gridScrollable' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.486] 222:26  Error: 'window' is not defined.  no-undef
+[09:40:18.486] 251:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.486] 304:30  Error: 'document' is not defined.  no-undef
+[09:40:18.486] 317:40  Error: 'window' is not defined.  no-undef
+[09:40:18.486] 365:30  Error: 'document' is not defined.  no-undef
+[09:40:18.487] 473:9  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.487] 531:26  Error: 'document' is not defined.  no-undef
+[09:40:18.487] 544:36  Error: 'window' is not defined.  no-undef
+[09:40:18.487] 594:26  Error: 'document' is not defined.  no-undef
+[09:40:18.487] 
+[09:40:18.487] ./src/components/sneaker/SneakerFilterSidebar.tsx
+[09:40:18.487] 8:20  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.487] 12:19  Error: 'range' is defined but never used.  no-unused-vars
+[09:40:18.487] 15:19  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.488] 18:18  Error: 'size' is defined but never used.  no-unused-vars
+[09:40:18.488] 20:21  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.488] 25:11  Error: '_onHide' is defined but never used.  no-unused-vars
+[09:40:18.488] 25:11  Warning: '_onHide' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.488] 28:15  Error: '_priceRange' is defined but never used.  no-unused-vars
+[09:40:18.488] 28:15  Warning: '_priceRange' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.488] 29:13  Error: '_minPrice' is defined but never used.  no-unused-vars
+[09:40:18.488] 29:13  Warning: '_minPrice' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.488] 30:13  Error: '_maxPrice' is defined but never used.  no-unused-vars
+[09:40:18.488] 30:13  Warning: '_maxPrice' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.489] 31:18  Error: '_onPriceChange' is defined but never used.  no-unused-vars
+[09:40:18.489] 31:18  Warning: '_onPriceChange' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.489] 
+[09:40:18.489] ./src/components/sneaker/SneakerMobileFilterOverlay.tsx
+[09:40:18.489] 8:20  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.489] 11:19  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.489] 14:18  Error: 'size' is defined but never used.  no-unused-vars
+[09:40:18.489] 16:21  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.489] 35:11  Error: '_setTab' is defined but never used.  no-unused-vars
+[09:40:18.489] 35:11  Warning: '_setTab' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.489] 
+[09:40:18.489] ./src/components/sneaker/SneakerProductGrid.tsx
+[09:40:18.489] 16:21  Error: 'id' is defined but never used.  no-unused-vars
+[09:40:18.489] 31:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.489] 
+[09:40:18.489] ./src/components/stash/StashProductGrid.tsx
+[09:40:18.489] 24:37  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.489] 25:28  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.489] 
+[09:40:18.489] ./src/components/swiper360/ProductSlider360.tsx
+[09:40:18.489] 21:19  Error: 'window' is not defined.  no-undef
+[09:40:18.489] 25:5  Error: 'window' is not defined.  no-undef
+[09:40:18.490] 26:18  Error: 'window' is not defined.  no-undef
+[09:40:18.490] 73:10  Error: 'preloadedImages' is assigned a value but never used.  no-unused-vars
+[09:40:18.490] 73:10  Warning: 'preloadedImages' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.490] 75:10  Error: 'preloadedImageElements' is assigned a value but never used.  no-unused-vars
+[09:40:18.490] 75:10  Warning: 'preloadedImageElements' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.490] 75:84  Error: 'HTMLImageElement' is not defined.  no-undef
+[09:40:18.490] 77:31  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.490] 78:30  Error: 'NodeJS' is not defined.  no-undef
+[09:40:18.490] 80:40  Error: 'NodeJS' is not defined.  no-undef
+[09:40:18.490] 88:42  Error: 'HTMLImageElement' is not defined.  no-undef
+[09:40:18.490] 92:37  Error: 'index' is defined but never used.  no-unused-vars
+[09:40:18.490] 92:37  Warning: 'index' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.490] 93:23  Error: 'window' is not defined.  no-undef
+[09:40:18.490] 115:29  Error: 'setInterval' is not defined.  no-undef
+[09:40:18.490] 121:9  Error: 'clearInterval' is not defined.  no-undef
+[09:40:18.490] 129:7  Error: 'clearTimeout' is not defined.  no-undef
+[09:40:18.504] 132:37  Error: 'setTimeout' is not defined.  no-undef
+[09:40:18.505] 138:9  Error: 'clearTimeout' is not defined.  no-undef
+[09:40:18.505] 143:48  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.505] 208:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.505] 
+[09:40:18.505] ./src/components/tik-tok/tik_inspiration.tsx
+[09:40:18.505] 42:29  Error: 'HTMLVideoElement' is not defined.  no-undef
+[09:40:18.505] 53:6  Warning: React Hook useEffect has missing dependencies: 'carouselData' and 'startIndex'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+[09:40:18.506] 104:35  Error: 'console' is not defined.  no-undef
+[09:40:18.506] 117:7  Error: 'setTimeout' is not defined.  no-undef
+[09:40:18.506] 120:7  Error: 'setTimeout' is not defined.  no-undef
+[09:40:18.506] 126:14  Error: 'window' is not defined.  no-undef
+[09:40:18.506] 126:41  Error: 'window' is not defined.  no-undef
+[09:40:18.506] 136:23  Error: 'window' is not defined.  no-undef
+[09:40:18.506] 141:3  Error: 'window' is not defined.  no-undef
+[09:40:18.507] 142:16  Error: 'window' is not defined.  no-undef
+[09:40:18.507] 
+[09:40:18.507] ./src/components/videostack/videostack.tsx
+[09:40:18.507] 23:19  Error: 'window' is not defined.  no-undef
+[09:40:18.507] 27:5  Error: 'window' is not defined.  no-undef
+[09:40:18.507] 28:18  Error: 'window' is not defined.  no-undef
+[09:40:18.507] 57:24  Error: 'index' is defined but never used.  no-unused-vars
+[09:40:18.507] 169:24  Error: 'index' is defined but never used.  no-unused-vars
+[09:40:18.507] 190:29  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.508] 
+[09:40:18.508] ./src/components/watch/BrandTicker.tsx
+[09:40:18.508] 12:18  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.508] 17:28  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.508] 38:24  Error: 'requestAnimationFrame' is not defined.  no-undef
+[09:40:18.508] 41:18  Error: 'cancelAnimationFrame' is not defined.  no-undef
+[09:40:18.508] 97:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.508] 149:66  Error: 'HTMLSpanElement' is not defined.  no-undef
+[09:40:18.509] 
+[09:40:18.509] ./src/components/watch/Pagination.tsx
+[09:40:18.509] 7:18  Error: 'page' is defined but never used.  no-unused-vars
+[09:40:18.509] 
+[09:40:18.509] ./src/components/watch/SneakerFilterSidebar.tsx
+[09:40:18.509] 8:20  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.509] 12:19  Error: 'range' is defined but never used.  no-unused-vars
+[09:40:18.509] 15:19  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.509] 18:18  Error: 'size' is defined but never used.  no-unused-vars
+[09:40:18.510] 20:21  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.510] 25:3  Error: 'onHide' is defined but never used.  no-unused-vars
+[09:40:18.510] 25:3  Warning: 'onHide' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.510] 28:3  Error: 'priceRange' is defined but never used.  no-unused-vars
+[09:40:18.510] 28:3  Warning: 'priceRange' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.510] 29:3  Error: 'minPrice' is defined but never used.  no-unused-vars
+[09:40:18.510] 29:3  Warning: 'minPrice' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.510] 30:3  Error: 'maxPrice' is defined but never used.  no-unused-vars
+[09:40:18.510] 30:3  Warning: 'maxPrice' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.510] 31:3  Error: 'onPriceChange' is defined but never used.  no-unused-vars
+[09:40:18.511] 31:3  Warning: 'onPriceChange' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.511] 
+[09:40:18.511] ./src/components/watch/SneakerProductGrid.tsx
+[09:40:18.511] 15:21  Error: 'id' is defined but never used.  no-unused-vars
+[09:40:18.511] 25:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.511] 
+[09:40:18.511] ./src/components/watch/WatchBrandProductPage.tsx
+[09:40:18.513] 46:31  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.513] 47:9  Error: 'gridContainerRef' is assigned a value but never used.  no-unused-vars
+[09:40:18.513] 47:9  Warning: 'gridContainerRef' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.513] 47:35  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.517] 48:10  Error: 'gridScrollable' is assigned a value but never used.  no-unused-vars
+[09:40:18.518] 48:10  Warning: 'gridScrollable' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.518] 58:45  Error: 'window' is not defined.  no-undef
+[09:40:18.518] 60:7  Error: 'window' is not defined.  no-undef
+[09:40:18.518] 61:20  Error: 'window' is not defined.  no-undef
+[09:40:18.518] 68:26  Error: 'window' is not defined.  no-undef
+[09:40:18.518] 95:9  Warning: The 'watches' logical expression could make the dependencies of useMemo Hook (at line 103) change on every render. To fix this, wrap the initialization of 'watches' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.518] 95:9  Warning: The 'watches' logical expression could make the dependencies of useMemo Hook (at line 112) change on every render. To fix this, wrap the initialization of 'watches' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.519] 95:9  Warning: The 'watches' logical expression could make the dependencies of useMemo Hook (at line 124) change on every render. To fix this, wrap the initialization of 'watches' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.520] 99:25  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.520] 106:25  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.520] 118:6  Warning: React Hook useEffect has a missing dependency: 'priceRange'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+[09:40:18.520] 132:50  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.520] 153:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.520] 206:30  Error: 'document' is not defined.  no-undef
+[09:40:18.520] 219:40  Error: 'window' is not defined.  no-undef
+[09:40:18.521] 267:30  Error: 'document' is not defined.  no-undef
+[09:40:18.521] 382:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.521] 440:30  Error: 'document' is not defined.  no-undef
+[09:40:18.521] 453:40  Error: 'window' is not defined.  no-undef
+[09:40:18.521] 503:30  Error: 'document' is not defined.  no-undef
+[09:40:18.522] 
+[09:40:18.522] ./src/components/watch/WatchBrandTicker.tsx
+[09:40:18.522] 12:18  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.522] 17:28  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.522] 38:24  Error: 'requestAnimationFrame' is not defined.  no-undef
+[09:40:18.522] 41:18  Error: 'cancelAnimationFrame' is not defined.  no-undef
+[09:40:18.522] 97:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.522] 149:66  Error: 'HTMLSpanElement' is not defined.  no-undef
+[09:40:18.522] 
+[09:40:18.523] ./src/components/watch/WatchFilterSidebar.tsx
+[09:40:18.523] 8:20  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.523] 12:19  Error: 'range' is defined but never used.  no-unused-vars
+[09:40:18.523] 15:19  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.523] 18:19  Error: 'color' is defined but never used.  no-unused-vars
+[09:40:18.523] 21:20  Error: 'gender' is defined but never used.  no-unused-vars
+[09:40:18.523] 23:21  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.523] 28:11  Error: '_onHide' is defined but never used.  no-unused-vars
+[09:40:18.523] 28:11  Warning: '_onHide' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.523] 31:15  Error: '_priceRange' is defined but never used.  no-unused-vars
+[09:40:18.524] 31:15  Warning: '_priceRange' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.524] 32:13  Error: '_minPrice' is defined but never used.  no-unused-vars
+[09:40:18.524] 32:13  Warning: '_minPrice' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.524] 33:13  Error: '_maxPrice' is defined but never used.  no-unused-vars
+[09:40:18.524] 33:13  Warning: '_maxPrice' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.524] 34:18  Error: '_onPriceChange' is defined but never used.  no-unused-vars
+[09:40:18.524] 34:18  Warning: '_onPriceChange' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.524] 
+[09:40:18.524] ./src/components/watch/WatchMobileFilterOverlay.tsx
+[09:40:18.525] 8:20  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.525] 11:19  Error: 'brand' is defined but never used.  no-unused-vars
+[09:40:18.525] 14:19  Error: 'color' is defined but never used.  no-unused-vars
+[09:40:18.540] 17:20  Error: 'gender' is defined but never used.  no-unused-vars
+[09:40:18.540] 19:21  Error: 'val' is defined but never used.  no-unused-vars
+[09:40:18.541] 41:11  Error: '_setTab' is defined but never used.  no-unused-vars
+[09:40:18.541] 41:11  Warning: '_setTab' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.541] 
+[09:40:18.541] ./src/components/watch/WatchProductGrid.tsx
+[09:40:18.541] 18:21  Error: 'id' is defined but never used.  no-unused-vars
+[09:40:18.541] 46:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+[09:40:18.542] 56:50  Error: 'HTMLImageElement' is not defined.  no-undef
+[09:40:18.542] 
+[09:40:18.542] ./src/context/ProductContext.tsx
+[09:40:18.542] 4:61  Error: 'productCache' is defined but never used.  no-unused-vars
+[09:40:18.542] 4:61  Warning: 'productCache' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.542] 5:10  Error: 'hasViewableImage' is defined but never used.  no-unused-vars
+[09:40:18.542] 5:10  Warning: 'hasViewableImage' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.542] 58:7  Error: 'ALL_MENU_DATA_QUERY' is assigned a value but never used.  no-unused-vars
+[09:40:18.543] 58:7  Warning: 'ALL_MENU_DATA_QUERY' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.543] 83:13  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.543] 84:15  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.543] 89:15  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.543] 90:14  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.543] 91:14  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.543] 92:15  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.543] 93:18  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.543] 96:22  Error: 'category' is defined but never used.  no-unused-vars
+[09:40:18.543] 97:22  Error: 'category' is defined but never used.  no-unused-vars
+[09:40:18.543] 120:44  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.543] 121:48  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.543] 140:38  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.543] 164:11  Warning: 'processed' is never reassigned. Use 'const' instead.  prefer-const
+[09:40:18.543] 175:7  Error: 'console' is not defined.  no-undef
+[09:40:18.543] 177:7  Error: 'console' is not defined.  no-undef
+[09:40:18.543] 190:18  Error: 'performance' is not defined.  no-undef
+[09:40:18.543] 200:33  Error: 'fetch' is not defined.  no-undef
+[09:40:18.543] 216:61  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.543] 217:60  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.543] 218:64  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.543] 219:61  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.543] 220:60  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.544] 244:21  Error: 'performance' is not defined.  no-undef
+[09:40:18.544] 248:9  Error: 'console' is not defined.  no-undef
+[09:40:18.544] 248:53  Error: 'performance' is not defined.  no-undef
+[09:40:18.544] 249:9  Error: 'console' is not defined.  no-undef
+[09:40:18.544] 252:9  Error: 'setTimeout' is not defined.  no-undef
+[09:40:18.544] 253:11  Error: 'console' is not defined.  no-undef
+[09:40:18.544] 258:9  Error: 'console' is not defined.  no-undef
+[09:40:18.544] 265:6  Warning: React Hook useEffect has a missing dependency: 'loadCategoryData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+[09:40:18.544] 
+[09:40:18.544] ./src/lib/apolloClient.ts
+[09:40:18.544] 10:12  Error: 'process' is not defined.  no-undef
+[09:40:18.544] 17:48  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.544] 27:41  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.544] 
+[09:40:18.544] ./src/pages/accessories/[id].tsx
+[09:40:18.544] 50:5  Error: 'console' is not defined.  no-undef
+[09:40:18.544] 57:56  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.544] 
+[09:40:18.544] ./src/pages/accessories/brand/[brand].tsx
+[09:40:18.544] 65:5  Error: 'console' is not defined.  no-undef
+[09:40:18.544] 
+[09:40:18.544] ./src/pages/accessories.tsx
+[09:40:18.544] 69:45  Error: 'window' is not defined.  no-undef
+[09:40:18.544] 71:7  Error: 'window' is not defined.  no-undef
+[09:40:18.544] 72:20  Error: 'window' is not defined.  no-undef
+[09:40:18.544] 81:9  Warning: The 'brands' logical expression could make the dependencies of useMemo Hook (at line 162) change on every render. To fix this, wrap the initialization of 'brands' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.544] 113:9  Warning: The 'accessories' conditional could make the dependencies of useMemo Hook (at line 120) change on every render. To fix this, wrap the initialization of 'accessories' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.544] 113:9  Warning: The 'accessories' conditional could make the dependencies of useMemo Hook (at line 130) change on every render. To fix this, wrap the initialization of 'accessories' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.544] 113:9  Warning: The 'accessories' conditional could make the dependencies of useMemo Hook (at line 144) change on every render. To fix this, wrap the initialization of 'accessories' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.544] 113:9  Warning: The 'accessories' conditional could make the dependencies of useMemo Hook (at line 162) change on every render. To fix this, wrap the initialization of 'accessories' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.545] 118:29  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.545] 118:63  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.545] 124:29  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.545] 124:63  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.545] 142:53  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.545] 156:46  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.545] 214:58  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.545] 215:58  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.545] 225:31  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.545] 226:35  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.545] 232:26  Error: 'window' is not defined.  no-undef
+[09:40:18.545] 286:30  Error: 'document' is not defined.  no-undef
+[09:40:18.545] 298:36  Error: 'window' is not defined.  no-undef
+[09:40:18.545] 345:30  Error: 'document' is not defined.  no-undef
+[09:40:18.545] 
+[09:40:18.545] ./src/pages/api/enquiry.ts
+[09:40:18.547] 6:5  Error: 'console' is not defined.  no-undef
+[09:40:18.547] 
+[09:40:18.547] ./src/pages/api/search.ts
+[09:40:18.548] 5:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.548] 19:37  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.548] 55:38  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.548] 65:32  Error: Do not access Object.prototype method 'hasOwnProperty' from target object.  no-prototype-builtins
+[09:40:18.548] 123:18  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.548] 
+[09:40:18.548] ./src/pages/api/upload.ts
+[09:40:18.548] 7:15  Error: 'process' is not defined.  no-undef
+[09:40:18.548] 8:12  Error: 'process' is not defined.  no-undef
+[09:40:18.548] 9:15  Error: 'process' is not defined.  no-undef
+[09:40:18.548] 28:12  Error: '_fields' is assigned a value but never used.  no-unused-vars
+[09:40:18.548] 28:12  Warning: '_fields' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.548] 29:29  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.548] 72:5  Error: 'console' is not defined.  no-undef
+[09:40:18.549] 
+[09:40:18.549] ./src/pages/apparel/[id].tsx
+[09:40:18.549] 50:5  Error: 'console' is not defined.  no-undef
+[09:40:18.549] 57:54  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.549] 
+[09:40:18.549] ./src/pages/apparel/brand/[brand].tsx
+[09:40:18.549] 65:5  Error: 'console' is not defined.  no-undef
+[09:40:18.550] 
+[09:40:18.550] ./src/pages/apparel.tsx
+[09:40:18.550] 96:45  Error: 'window' is not defined.  no-undef
+[09:40:18.550] 98:7  Error: 'window' is not defined.  no-undef
+[09:40:18.550] 99:20  Error: 'window' is not defined.  no-undef
+[09:40:18.550] 108:9  Warning: The 'brands' logical expression could make the dependencies of useMemo Hook (at line 189) change on every render. To fix this, wrap the initialization of 'brands' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.550] 140:9  Warning: The 'apparels' conditional could make the dependencies of useMemo Hook (at line 147) change on every render. To fix this, wrap the initialization of 'apparels' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.550] 140:9  Warning: The 'apparels' conditional could make the dependencies of useMemo Hook (at line 157) change on every render. To fix this, wrap the initialization of 'apparels' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.550] 140:9  Warning: The 'apparels' conditional could make the dependencies of useMemo Hook (at line 171) change on every render. To fix this, wrap the initialization of 'apparels' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.550] 140:9  Warning: The 'apparels' conditional could make the dependencies of useMemo Hook (at line 189) change on every render. To fix this, wrap the initialization of 'apparels' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.550] 145:26  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.550] 145:60  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.550] 151:26  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.550] 151:60  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.550] 169:53  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.550] 183:41  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.550] 241:53  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.550] 242:58  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.550] 252:31  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.550] 253:35  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.550] 259:26  Error: 'window' is not defined.  no-undef
+[09:40:18.550] 313:30  Error: 'document' is not defined.  no-undef
+[09:40:18.550] 325:36  Error: 'window' is not defined.  no-undef
+[09:40:18.550] 372:30  Error: 'document' is not defined.  no-undef
+[09:40:18.550] 
+[09:40:18.550] ./src/pages/categories.tsx
+[09:40:18.550] 186:64  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.550] 
+[09:40:18.550] ./src/pages/perfume/[id].tsx
+[09:40:18.552] 50:5  Error: 'console' is not defined.  no-undef
+[09:40:18.552] 57:54  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.552] 
+[09:40:18.552] ./src/pages/perfume/brand/[brand].tsx
+[09:40:18.552] 65:5  Error: 'console' is not defined.  no-undef
+[09:40:18.552] 
+[09:40:18.552] ./src/pages/perfume.tsx
+[09:40:18.552] 70:45  Error: 'window' is not defined.  no-undef
+[09:40:18.552] 72:7  Error: 'window' is not defined.  no-undef
+[09:40:18.552] 73:20  Error: 'window' is not defined.  no-undef
+[09:40:18.552] 82:9  Warning: The 'brands' logical expression could make the dependencies of useMemo Hook (at line 185) change on every render. To fix this, wrap the initialization of 'brands' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.552] 116:9  Warning: The 'perfumes' conditional could make the dependencies of useMemo Hook (at line 127) change on every render. To fix this, wrap the initialization of 'perfumes' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.552] 116:9  Warning: The 'perfumes' conditional could make the dependencies of useMemo Hook (at line 139) change on every render. To fix this, wrap the initialization of 'perfumes' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.552] 116:9  Warning: The 'perfumes' conditional could make the dependencies of useMemo Hook (at line 153) change on every render. To fix this, wrap the initialization of 'perfumes' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.552] 116:9  Warning: The 'perfumes' conditional could make the dependencies of useMemo Hook (at line 167) change on every render. To fix this, wrap the initialization of 'perfumes' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.552] 116:9  Warning: The 'perfumes' conditional could make the dependencies of useMemo Hook (at line 185) change on every render. To fix this, wrap the initialization of 'perfumes' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.552] 121:26  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.552] 131:26  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.552] 133:32  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.552] 143:26  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.552] 145:32  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.552] 165:53  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.552] 179:41  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.552] 245:53  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.552] 246:68  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.552] 256:31  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.552] 257:35  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.552] 263:26  Error: 'window' is not defined.  no-undef
+[09:40:18.552] 317:30  Error: 'document' is not defined.  no-undef
+[09:40:18.552] 329:36  Error: 'window' is not defined.  no-undef
+[09:40:18.554] 376:30  Error: 'document' is not defined.  no-undef
+[09:40:18.554] 
+[09:40:18.554] ./src/pages/search.tsx
+[09:40:18.554] 10:10  Error: 'getBrandUrl' is defined but never used.  no-unused-vars
+[09:40:18.554] 10:10  Warning: 'getBrandUrl' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.554] 12:1  Error: 'console' is not defined.  no-undef
+[09:40:18.554] 137:33  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.554] 138:40  Error: 'NodeJS' is not defined.  no-undef
+[09:40:18.554] 142:43  Error: 'window' is not defined.  no-undef
+[09:40:18.554] 144:5  Error: 'window' is not defined.  no-undef
+[09:40:18.554] 145:18  Error: 'window' is not defined.  no-undef
+[09:40:18.554] 204:9  Warning: The 'brands' logical expression could make the dependencies of useEffect Hook (at line 235) change on every render. To fix this, wrap the initialization of 'brands' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.554] 210:9  Error: 'clearInterval' is not defined.  no-undef
+[09:40:18.554] 213:39  Error: 'setInterval' is not defined.  no-undef
+[09:40:18.554] 220:13  Error: 'setTimeout' is not defined.  no-undef
+[09:40:18.554] 232:9  Error: 'clearInterval' is not defined.  no-undef
+[09:40:18.554] 294:5  Error: 'console' is not defined.  no-undef
+[09:40:18.554] 295:5  Error: 'console' is not defined.  no-undef
+[09:40:18.554] 296:5  Error: 'console' is not defined.  no-undef
+[09:40:18.554] 297:5  Error: 'console' is not defined.  no-undef
+[09:40:18.555] 298:5  Error: 'console' is not defined.  no-undef
+[09:40:18.555] 299:5  Error: 'console' is not defined.  no-undef
+[09:40:18.555] 350:30  Error: 'document' is not defined.  no-undef
+[09:40:18.555] 409:30  Error: 'document' is not defined.  no-undef
+[09:40:18.555] 437:54  Warning: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+[09:40:18.555] 437:63  Warning: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+[09:40:18.555] 
+[09:40:18.555] ./src/pages/sneaker/[id].tsx
+[09:40:18.555] 48:5  Error: 'console' is not defined.  no-undef
+[09:40:18.555] 55:54  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.555] 
+[09:40:18.555] ./src/pages/sneaker/brand/[brand].tsx
+[09:40:18.555] 48:5  Error: 'console' is not defined.  no-undef
+[09:40:18.555] 59:95  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.555] 
+[09:40:18.555] ./src/pages/sneaker.tsx
+[09:40:18.555] 58:45  Error: 'window' is not defined.  no-undef
+[09:40:18.555] 60:7  Error: 'window' is not defined.  no-undef
+[09:40:18.555] 61:20  Error: 'window' is not defined.  no-undef
+[09:40:18.555] 201:31  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.555] 202:35  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.555] 208:26  Error: 'window' is not defined.  no-undef
+[09:40:18.555] 262:30  Error: 'document' is not defined.  no-undef
+[09:40:18.555] 274:36  Error: 'window' is not defined.  no-undef
+[09:40:18.555] 321:30  Error: 'document' is not defined.  no-undef
+[09:40:18.555] 
+[09:40:18.555] ./src/pages/watch/[id].tsx
+[09:40:18.555] 50:5  Error: 'console' is not defined.  no-undef
+[09:40:18.555] 57:52  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.555] 
+[09:40:18.555] ./src/pages/watch/brand/[brand].tsx
+[09:40:18.555] 64:5  Error: 'console' is not defined.  no-undef
+[09:40:18.555] 
+[09:40:18.555] ./src/pages/watch.tsx
+[09:40:18.555] 62:45  Error: 'window' is not defined.  no-undef
+[09:40:18.556] 64:7  Error: 'window' is not defined.  no-undef
+[09:40:18.556] 65:20  Error: 'window' is not defined.  no-undef
+[09:40:18.556] 73:9  Warning: The 'brands' logical expression could make the dependencies of useMemo Hook (at line 159) change on every render. To fix this, wrap the initialization of 'brands' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+[09:40:18.556] 99:33  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.556] 99:41  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.556] 113:25  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.556] 121:25  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.556] 139:53  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.556] 153:38  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.556] 203:50  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.556] 214:31  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.556] 215:35  Error: 'HTMLDivElement' is not defined.  no-undef
+[09:40:18.556] 216:10  Error: 'gridScrollable' is assigned a value but never used.  no-unused-vars
+[09:40:18.556] 216:10  Warning: 'gridScrollable' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.556] 221:26  Error: 'window' is not defined.  no-undef
+[09:40:18.556] 275:30  Error: 'document' is not defined.  no-undef
+[09:40:18.556] 287:36  Error: 'window' is not defined.  no-undef
+[09:40:18.556] 334:30  Error: 'document' is not defined.  no-undef
+[09:40:18.556] 
+[09:40:18.556] ./src/utils/cacheUtils.ts
+[09:40:18.556] 15:20  Error: 'Storage' is not defined.  no-undef
+[09:40:18.556] 22:51  Error: 'window' is not defined.  no-undef
+[09:40:18.556] 22:73  Error: 'window' is not defined.  no-undef
+[09:40:18.556] 42:7  Error: 'console' is not defined.  no-undef
+[09:40:18.556] 64:7  Error: 'console' is not defined.  no-undef
+[09:40:18.556] 81:7  Error: 'console' is not defined.  no-undef
+[09:40:18.556] 92:7  Error: 'console' is not defined.  no-undef
+[09:40:18.556] 106:14  Error: '_error' is defined but never used.  no-unused-vars
+[09:40:18.556] 106:14  Warning: '_error' is defined but never used.  @typescript-eslint/no-unused-vars
+[09:40:18.556] 140:7  Error: 'console' is not defined.  no-undef
+[09:40:18.556] 164:7  Error: 'console' is not defined.  no-undef
+[09:40:18.556] 201:34  Error: 'NodeJS' is not defined.  no-undef
+[09:40:18.556] 205:56  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.556] 213:22  Error: 'setInterval' is not defined.  no-undef
+[09:40:18.556] 216:9  Error: 'console' is not defined.  no-undef
+[09:40:18.558] 218:9  Error: 'console' is not defined.  no-undef
+[09:40:18.558] 229:7  Error: 'clearInterval' is not defined.  no-undef
+[09:40:18.558] 237:40  Error: 'clearInterval' is not defined.  no-undef
+[09:40:18.558] 314:3  Error: 'setInterval' is not defined.  no-undef
+[09:40:18.558] 319:3  Error: 'window' is not defined.  no-undef
+[09:40:18.558] 
+[09:40:18.558] ./src/utils/getAllProducts.ts
+[09:40:18.558] 3:26  Error: 'process' is not defined.  no-undef
+[09:40:18.558] 24:32  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.558] 25:31  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.558] 26:35  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.558] 27:32  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.558] 28:31  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+[09:40:18.558] 
+[09:40:18.558] ./src/utils/sendEnquiry.ts
+[09:40:18.558] 16:21  Error: 'fetch' is not defined.  no-undef
+[09:40:18.558] 
+[09:40:18.558] info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+[09:40:18.648] Error: Command "npm run build" exited with 1
+[09:40:18.898] 
+[09:40:21.898] Exiting build container

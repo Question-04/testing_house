@@ -172,7 +172,7 @@ export function ProductProvider({ children }: { children: React.ReactNode }) {
       }));
       setLoadedCategories(prev => new Set([...prev, category]));
       
-      console.log(`📦 Loaded category: ${category}`);
+      // console.log(`📦 Loaded category: ${category}`);
     } catch (error) {
       console.error(`Error loading ${category} data:`, error);
     }
@@ -187,9 +187,8 @@ export function ProductProvider({ children }: { children: React.ReactNode }) {
     if (typeof window === 'undefined') return;
     
     const preloadEssentialData = async () => {
-      const t0 = performance.now();
-      
       try {
+        const t0 = performance.now();
         // Load only essential data first (menu + search)
         const [menuData, searchData] = await Promise.all([
           // Menu data (essential for navigation)
@@ -210,7 +209,7 @@ export function ProductProvider({ children }: { children: React.ReactNode }) {
             'search_data',
             async () => {
               const productsResult = await apolloClient.query({ query: ALL_PRODUCTS_QUERY });
-              
+               
               if (productsResult.data) {
                 const all = [
                   ...(productsResult.data.sneakers?.map((p: any) => ({ ...p, type: 'sneakers' })) || []),
@@ -245,12 +244,12 @@ export function ProductProvider({ children }: { children: React.ReactNode }) {
         setLoading(false);
         setIsPreloaded(true);
         
-        console.log(`🚀 Essential data loaded in ${(performance.now() - t0).toFixed(2)}ms`);
-        console.log('📊 Cache stats:', cacheUtils.getStats());
+        // console.log(`🚀 Essential data loaded in ${(performance.now() - t0).toFixed(2)}ms`);
+        // console.log('📊 Cache stats:', cacheUtils.getStats());
 
         // Load category data in background (non-blocking)
         setTimeout(async () => {
-          console.log('🔄 Loading category data in background...');
+          // console.log('🔄 Loading category data in background...');
           await loadCategoryData('sneakers'); // Load most popular category first
         }, 1000);
 

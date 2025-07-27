@@ -1,13 +1,10 @@
-html, body {
+.sectionWrapper {
   margin: 0;
   padding: 0;
   width: 100vw;
   min-height: 100vh;
   background-color: rgb(255, 255, 255);
   overflow-x: hidden;
-}
-.sectionWrapper {
-  width: 100vw;
   min-height: 80vh;
   background: linear-gradient(60deg, #0d2233 0%, #e6eaf0 100%);
   display: flex;
