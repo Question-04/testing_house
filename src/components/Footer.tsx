@@ -35,10 +35,6 @@ const Footer = () => {
   const { data: watchBrands } = useQuery(ALL_WATCH_BRANDS);
   const { data: apparelBrands } = useQuery(ALL_APPAREL_BRANDS);
 
-  const router = useRouter();
-  // Detect product detail pages: /category/[id]
-  const productDetailRegex = /^\/(accessories|apparel|perfume|sneaker|watch)\/[^/]+$/;
-
   // Get top brands for each category with fallbacks
   const topSneakerBrands = sneakerBrands?.allSneakerBrands?.slice(0, 4) || ['Balenciaga', 'New Balance', 'Air Jordan', 'Nike'];
   const topPerfumeBrands = perfumeBrands?.allPerfumeBrands?.slice(0, 4) || ['Dior', 'Chanel', 'Creed', 'Versace'];

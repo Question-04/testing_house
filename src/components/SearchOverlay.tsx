@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
 import debounce from 'lodash.debounce';
 import { FixedSizeList as List } from 'react-window';
@@ -46,7 +46,6 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
   const [categoryCounts, setCategoryCounts] = useState<Record<string, number>>({});
   const [searchHistory, setSearchHistory] = useState<string[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
   const [hasMore, setHasMore] = useState(true);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -78,7 +77,7 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
           setResults(prev => [...prev, ...(data.products || [])]);
         }
         
-        setTotalPages(data.totalPages || 1);
+        // setTotalPages(data.totalPages || 1); // Removed unused variable
         setTotalResults(data.total || 0);
         setHasMore(page < (data.totalPages || 1));
         
@@ -190,7 +189,7 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
       setLoading(false);
       setActiveCategory('sneakers');
       setCurrentPage(1);
-      setTotalPages(1);
+      // setTotalPages(1); // Removed unused variable
       setTotalResults(0);
       setHasMore(true);
     }
