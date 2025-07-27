@@ -146,8 +146,8 @@ const ProductSlider360 = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <img
-                  src={product.images360[frameIndex]}
-                  alt={product.name}
+                  src={selectedProduct.images360[frameIndex]}
+                  alt={selectedProduct.name}
                   className={styles.productPreviewImage}
                   style={{
                     maxWidth: '55%',
