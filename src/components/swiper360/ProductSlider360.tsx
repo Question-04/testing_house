@@ -1,15 +1,12 @@
 'use client';
 
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import styles from './ProductSlider.module.css';
 
 // Configure Swiper
-// eslint-disable-next-line react-hooks/rules-of-hooks
 SwiperCore.use([Pagination]);
 
 // Mobile detection hook
@@ -62,7 +59,7 @@ const products = [
   { 
     name: 'Air Jordan', 
     thumb: `${CDN_BASE_URL}/airjordan221image_02.png`, 
-    images360: Array.from({ length: 19 }, (_, i) => `${CDN_BASE_URL}/airjordan221image_${(i + 2).toString().padStart(2, '0')}.png`) // Frames 2-20
+    images360: Array.from({ length: 19 }, (_, i) => `${CDN_BASE_URL}/airjordan221image_${(i + 2).toString().padStart(2, '0')}.png`)
   },
 ];
 
@@ -70,14 +67,11 @@ const ProductSlider360 = () => {
   const [selectedProduct, setSelectedProduct] = useState(products[0]);
   const [frameIndex, setFrameIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
-  const [preloadedImages, setPreloadedImages] = useState<Set<string>>(new Set());
   const [isLoading, setIsLoading] = useState(true);
-  const [preloadedImageElements, setPreloadedImageElements] = useState<Map<string, HTMLImageElement>>(new Map());
   const [currentImageSrc, setCurrentImageSrc] = useState<string>('');
   const containerRef = useRef<HTMLDivElement | null>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const lastXRef = useRef<number | null>(null);
-  const frameUpdateTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isMobile = useIsMobile();
 
   // Filter products for mobile (show only 4)
@@ -85,24 +79,20 @@ const ProductSlider360 = () => {
 
   // Preload images for current product
   const preloadImages = useCallback((product: typeof products[0]) => {
-    const newPreloaded = new Map<string, HTMLImageElement>();
+    setIsLoading(true);
     let loadedCount = 0;
     
-    // Preload ALL frames immediately for smooth 360° rotation
-    product.images360.forEach((src, index) => {
+    // Preload first few frames for immediate display
+    product.images360.slice(0, 5).forEach((src) => {
       const img = new window.Image();
       img.onload = () => {
         loadedCount++;
-        if (loadedCount >= 5) {
+        if (loadedCount >= 3) {
           setIsLoading(false);
         }
       };
       img.src = src;
-      newPreloaded.set(src, img);
     });
-
-    setPreloadedImages(new Set(newPreloaded.keys()));
-    setPreloadedImageElements(newPreloaded);
   }, []);
 
   useEffect(() => {
@@ -114,7 +104,7 @@ const ProductSlider360 = () => {
     if (!isHovering) {
       intervalRef.current = setInterval(() => {
         setFrameIndex((prev) => (prev + 1) % selectedProduct.images360.length);
-      }, 150); // Slightly slower for better performance
+      }, 150);
     }
     return () => {
       if (intervalRef.current) {
@@ -123,21 +113,9 @@ const ProductSlider360 = () => {
     };
   }, [isHovering, selectedProduct]);
 
-  // Update current image src when frame index changes (debounced)
+  // Update current image src when frame index changes
   useEffect(() => {
-    if (frameUpdateTimeoutRef.current) {
-      clearTimeout(frameUpdateTimeoutRef.current);
-    }
-    
-    frameUpdateTimeoutRef.current = setTimeout(() => {
-      setCurrentImageSrc(selectedProduct.images360[frameIndex]);
-    }, 50); // Debounce frame updates
-
-    return () => {
-      if (frameUpdateTimeoutRef.current) {
-        clearTimeout(frameUpdateTimeoutRef.current);
-      }
-    };
+    setCurrentImageSrc(selectedProduct.images360[frameIndex]);
   }, [frameIndex, selectedProduct]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -145,7 +123,7 @@ const ProductSlider360 = () => {
     const x = e.clientX;
     if (lastXRef.current !== null) {
       const delta = x - lastXRef.current;
-      if (Math.abs(delta) > 8) { // Increased threshold for better performance
+      if (Math.abs(delta) > 5) {
         setFrameIndex((prev) => (prev + (delta > 0 ? 1 : -1) + selectedProduct.images360.length) % selectedProduct.images360.length);
         lastXRef.current = x;
       }
