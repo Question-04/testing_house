@@ -1,14 +1,9 @@
-# Plutus Backend - GraphQL Test Queries
-# Server: http://localhost:8090/
-# Playground: http://localhost:8090/
+# Test Queries for Plutus Backend
+# Backend URL: https://testing-house.onrender.com/query
 
-# ========================================
-# BASIC QUERIES - Get All Products
-# ========================================
-
-# Get all sneakers (limit to 10 for testing)
-query GetAllSneakers {
-  sneakers(limit: 10) {
+# 1. Test Sneakers
+query GetSneakers {
+  sneakers(limit: 5) {
     id
     brand
     productName
@@ -24,9 +19,24 @@ query GetAllSneakers {
   }
 }
 
-# Get all watches (limit to 10 for testing)
-query GetAllWatches {
-  watches(limit: 10) {
+# 2. Test Sneakers by Brand
+query GetSneakersByBrand {
+  sneakers(brand: "Nike", limit: 3) {
+    id
+    brand
+    productName
+    sizePrices {
+      size
+      price
+    }
+    images
+    soldOut
+  }
+}
+
+# 3. Test Watches
+query GetWatches {
+  watches(limit: 5) {
     id
     brand
     name
@@ -41,9 +51,22 @@ query GetAllWatches {
   }
 }
 
-# Get all perfumes (limit to 10 for testing)
-query GetAllPerfumes {
-  perfumes(limit: 10) {
+# 4. Test Watches by Brand
+query GetWatchesByBrand {
+  watches(brand: "Rolex", limit: 3) {
+    id
+    brand
+    name
+    color
+    salePrice
+    marketPrice
+    images
+  }
+}
+
+# 5. Test Perfumes
+query GetPerfumes {
+  perfumes(limit: 5) {
     id
     brand
     title
@@ -61,132 +84,70 @@ query GetAllPerfumes {
   }
 }
 
-# Get all accessories (limit to 10 for testing)
-query GetAllAccessories {
-  accessories(limit: 10) {
-    id
-    brand
-    productName
-    subcategory
-    gender
-    sizePrices {
-      size
-      price
-    }
-    images
-    inStock
-    productLink
-    sellerName
-    sellerUrl
-  }
-}
-
-# Get all apparel (limit to 10 for testing)
-query GetAllApparel {
-  apparel(limit: 10) {
-    id
-    brand
-    productName
-    subcategory
-    gender
-    sizePrices {
-      size
-      price
-    }
-    images
-    inStock
-    productLink
-    sellerName
-    sellerUrl
-  }
-}
-
-# ========================================
-# FILTERED QUERIES - By Brand
-# ========================================
-
-# Get sneakers by brand
-query GetSneakersByBrand {
-  sneakers(brand: "Nike", limit: 5) {
-    id
-    brand
-    productName
-    sizePrices {
-      size
-      price
-    }
-    images
-    soldOut
-    productLink
-  }
-}
-
-# Get watches by brand
-query GetWatchesByBrand {
-  watches(brand: "Rolex", limit: 5) {
-    id
-    brand
-    name
-    color
-    salePrice
-    marketPrice
-    images
-    link
-  }
-}
-
-# Get perfumes by brand
+# 6. Test Perfumes by Brand
 query GetPerfumesByBrand {
-  perfumes(brand: "Chanel", limit: 5) {
+  perfumes(brand: "Chanel", limit: 3) {
     id
     brand
     title
     fragranceFamily
     concentration
-    variants {
-      size
-      price
-    }
     images
   }
 }
 
-# ========================================
-# PRICE FILTERING QUERIES
-# ========================================
-
-# Get sneakers within price range
-query GetSneakersByPrice {
-  sneakers(minPrice: 100, maxPrice: 500, limit: 10) {
+# 7. Test Accessories
+query GetAccessories {
+  accessories(limit: 5) {
     id
     brand
     productName
+    subcategory
+    gender
     sizePrices {
       size
       price
     }
-    soldOut
+    images
+    inStock
+    productLink
+    sellerName
+    sellerUrl
   }
 }
 
-# Get watches within price range
-query GetWatchesByPrice {
-  watches(minPrice: 1000, maxPrice: 10000, limit: 10) {
+# 8. Test Apparel
+query GetApparel {
+  apparel(limit: 5) {
     id
     brand
-    name
-    salePrice
-    marketPrice
+    productName
+    subcategory
+    gender
+    sizePrices {
+      size
+      price
+    }
+    images
+    inStock
+    productLink
+    sellerName
+    sellerUrl
   }
 }
 
-# ========================================
-# SEARCH QUERIES
-# ========================================
+# 9. Test All Brands
+query GetAllBrands {
+  allSneakerBrands
+  allWatchBrands
+  allPerfumeBrands
+  allAccessoryBrands
+  allApparelBrands
+}
 
-# Search sneakers
+# 10. Test Search Functionality
 query SearchSneakers {
-  sneakers(search: "Jordan", limit: 10) {
+  sneakers(search: "Jordan", limit: 3) {
     id
     brand
     productName
@@ -198,35 +159,9 @@ query SearchSneakers {
   }
 }
 
-# Search watches
-query SearchWatches {
-  watches(search: "automatic", limit: 10) {
-    id
-    brand
-    name
-    color
-    salePrice
-  }
-}
-
-# Search perfumes
-query SearchPerfumes {
-  perfumes(search: "woody", limit: 10) {
-    id
-    brand
-    title
-    fragranceFamily
-    concentration
-  }
-}
-
-# ========================================
-# SORTING QUERIES
-# ========================================
-
-# Get sneakers sorted by price (ascending)
-query GetSneakersSorted {
-  sneakers(sortOrder: "price_asc", limit: 10) {
+# 11. Test Price Filtering
+query GetSneakersByPrice {
+  sneakers(minPrice: 100, maxPrice: 500, limit: 3) {
     id
     brand
     productName
@@ -237,130 +172,8 @@ query GetSneakersSorted {
   }
 }
 
-# Get watches sorted by price (descending)
-query GetWatchesSorted {
-  watches(sortOrder: "price_desc", limit: 10) {
-    id
-    brand
-    name
-    salePrice
-    marketPrice
-  }
-}
-
-# ========================================
-# SIZE FILTERING QUERIES
-# ========================================
-
-# Get sneakers by size
-query GetSneakersBySize {
-  sneakers(size: "10", limit: 10) {
-    id
-    brand
-    productName
-    sizePrices {
-      size
-      price
-    }
-  }
-}
-
-# Get accessories by size
-query GetAccessoriesBySize {
-  accessories(size: "M", limit: 10) {
-    id
-    brand
-    productName
-    subcategory
-    sizePrices {
-      size
-      price
-    }
-  }
-}
-
-# ========================================
-# GENDER FILTERING QUERIES
-# ========================================
-
-# Get watches by gender
-query GetWatchesByGender {
-  watches(gender: "Men", limit: 10) {
-    id
-    brand
-    name
-    color
-    gender
-    salePrice
-  }
-}
-
-# Get apparel by gender
-query GetApparelByGender {
-  apparel(gender: "Women", limit: 10) {
-    id
-    brand
-    productName
-    subcategory
-    gender
-    sizePrices {
-      size
-      price
-    }
-  }
-}
-
-# ========================================
-# CATEGORY FILTERING QUERIES
-# ========================================
-
-# Get perfumes by fragrance family
-query GetPerfumesByFamily {
-  perfumes(fragranceFamily: "Woody", limit: 10) {
-    id
-    brand
-    title
-    fragranceFamily
-    concentration
-  }
-}
-
-# Get accessories by subcategory
-query GetAccessoriesBySubcategory {
-  accessories(subcategory: "Bags", limit: 10) {
-    id
-    brand
-    productName
-    subcategory
-    gender
-    sizePrices {
-      size
-      price
-    }
-  }
-}
-
-# Get apparel by subcategory
-query GetApparelBySubcategory {
-  apparel(subcategory: "Jackets", limit: 10) {
-    id
-    brand
-    productName
-    subcategory
-    gender
-    sizePrices {
-      size
-      price
-    }
-  }
-}
-
-# ========================================
-# INDIVIDUAL PRODUCT QUERIES
-# ========================================
-
-# Get specific sneaker by ID
-query GetSneakerById {
+# 12. Test Single Item Queries
+query GetSingleSneaker {
   sneaker(id: "1") {
     id
     brand
@@ -372,13 +185,10 @@ query GetSneakerById {
     images
     soldOut
     productLink
-    sellerName
-    sellerUrl
   }
 }
 
-# Get specific watch by ID
-query GetWatchById {
+query GetSingleWatch {
   watch(id: "1") {
     id
     brand
@@ -387,35 +197,21 @@ query GetWatchById {
     salePrice
     marketPrice
     images
-    link
-    sellerName
-    sellerUrl
-    gender
   }
 }
 
-# Get specific perfume by ID
-query GetPerfumeById {
+query GetSinglePerfume {
   perfume(id: "1") {
     id
     brand
     title
     fragranceFamily
     concentration
-    subcategory
-    variants {
-      size
-      price
-    }
     images
-    url
-    sellerName
-    sellerUrl
   }
 }
 
-# Get specific accessory by ID
-query GetAccessoryById {
+query GetSingleAccessory {
   accessory(id: "1") {
     id
     brand
@@ -427,15 +223,10 @@ query GetAccessoryById {
       price
     }
     images
-    inStock
-    productLink
-    sellerName
-    sellerUrl
   }
 }
 
-# Get specific apparel by ID
-query GetApparelById {
+query GetSingleApparel {
   apparelItem(id: "1") {
     id
     brand
@@ -447,166 +238,25 @@ query GetApparelById {
       price
     }
     images
-    inStock
-    productLink
-    sellerName
-    sellerUrl
   }
 }
 
-# ========================================
-# METADATA QUERIES - Get Available Options
-# ========================================
-
-# Get all sneaker brands
-query GetAllSneakerBrands {
-  allSneakerBrands
-}
-
-# Get all sneaker sizes
-query GetAllSneakerSizes {
-  allSneakerSizes
-}
-
-# Get all watch brands
-query GetAllWatchBrands {
-  allWatchBrands
-}
-
-# Get all perfume brands
-query GetAllPerfumeBrands {
-  allPerfumeBrands
-}
-
-# Get all accessory brands
-query GetAllAccessoryBrands {
-  allAccessoryBrands
-}
-
-# Get all apparel brands
-query GetAllApparelBrands {
-  allApparelBrands
-}
-
-# Get all subcategories
-query GetAllSubcategories {
-  sneakerSubcategories: allSneakerSubcategories
-  apparelSubcategories: allApparelSubcategories
-  accessorySubcategories: allAccessorySubcategories
-  watchSubcategories: allWatchSubcategories
-  perfumeSubcategories: allPerfumeSubcategories
-}
-
-# Get all genders
-query GetAllGenders {
-  apparelGenders: allApparelGenders
-  accessoryGenders: allAccessoryGenders
-  watchGenders: allWatchGenders
-  sneakerGenders: allSneakerGenders
-  perfumeGenders: allPerfumeGenders
-}
-
-# Get all fragrance families
-query GetAllFragranceFamilies {
+# 13. Test Categories and Subcategories
+query GetCategories {
+  allSneakerSubcategories
+  allApparelSubcategories
+  allAccessorySubcategories
+  allWatchSubcategories
+  allPerfumeSubcategories
+  allApparelGenders
+  allAccessoryGenders
+  allWatchGenders
+  allSneakerGenders
+  allPerfumeGenders
   allPerfumeFragranceFamilies
 }
 
-# ========================================
-# COMPLEX FILTERING QUERIES
-# ========================================
-
-# Get sneakers with multiple filters
-query GetFilteredSneakers {
-  sneakers(
-    brand: "Nike"
-    size: "10"
-    minPrice: 100
-    maxPrice: 300
-    sortOrder: "price_asc"
-    limit: 10
-  ) {
-    id
-    brand
-    productName
-    sizePrices {
-      size
-      price
-    }
-    images
-    soldOut
-  }
-}
-
-# Get watches with multiple filters
-query GetFilteredWatches {
-  watches(
-    brand: "Rolex"
-    gender: "Men"
-    minPrice: 5000
-    maxPrice: 50000
-    sortOrder: "price_desc"
-    limit: 10
-  ) {
-    id
-    brand
-    name
-    color
-    salePrice
-    marketPrice
-    gender
-  }
-}
-
-# Get perfumes with multiple filters
-query GetFilteredPerfumes {
-  perfumes(
-    brand: "Chanel"
-    fragranceFamily: "Floral"
-    concentration: "Eau de Parfum"
-    minPrice: 50
-    maxPrice: 200
-    limit: 10
-  ) {
-    id
-    brand
-    title
-    fragranceFamily
-    concentration
-    variants {
-      size
-      price
-    }
-  }
-}
-
-# ========================================
-# PAGINATION QUERIES
-# ========================================
-
-# Get sneakers with pagination
-query GetSneakersWithPagination {
-  sneakers(limit: 5, offset: 0) {
-    id
-    brand
-    productName
-  }
-}
-
-# Get watches with pagination
-query GetWatchesWithPagination {
-  watches(limit: 5, offset: 5) {
-    id
-    brand
-    name
-    salePrice
-  }
-}
-
-# ========================================
-# MUTATION TEST
-# ========================================
-
-# Test creating an enquiry
+# 14. Test Mutation (Create Enquiry)
 mutation CreateEnquiry {
   createEnquiry(
     productId: "test-123"
@@ -615,54 +265,4 @@ mutation CreateEnquiry {
     productImage: "https://example.com/image.jpg"
     contact: "test@example.com"
   )
-}
-
-# ========================================
-# QUICK TEST QUERIES (Minimal Fields)
-# ========================================
-
-# Quick sneaker test
-query QuickSneakerTest {
-  sneakers(limit: 3) {
-    id
-    brand
-    productName
-  }
-}
-
-# Quick watch test
-query QuickWatchTest {
-  watches(limit: 3) {
-    id
-    brand
-    name
-    salePrice
-  }
-}
-
-# Quick perfume test
-query QuickPerfumeTest {
-  perfumes(limit: 3) {
-    id
-    brand
-    title
-  }
-}
-
-# Quick accessory test
-query QuickAccessoryTest {
-  accessories(limit: 3) {
-    id
-    brand
-    productName
-  }
-}
-
-# Quick apparel test
-query QuickApparelTest {
-  apparel(limit: 3) {
-    id
-    brand
-    productName
-  }
 } 
