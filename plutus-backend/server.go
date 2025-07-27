@@ -252,10 +252,12 @@ func menuHandler(w http.ResponseWriter, r *http.Request) {
 
 func corsHandlerFunc(h http.HandlerFunc) http.Handler {
 	return cors.New(cors.Options{
-		AllowedOrigins:   []string{"*"}, // Or ["http://localhost:3000"] for more security
+		AllowedOrigins:   []string{"*"}, // Allow all origins
 		AllowCredentials: true,
-		AllowedMethods:   []string{"GET", "POST", "OPTIONS"},
+		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowedHeaders:   []string{"*"},
+		ExposedHeaders:   []string{"Content-Length"},
+		MaxAge:           86400, // 24 hours
 	}).Handler(http.HandlerFunc(h))
 }
 
@@ -295,8 +297,10 @@ func main() {
 	corsHandler := cors.New(cors.Options{
 		AllowedOrigins:   []string{"*"}, // Allow all origins
 		AllowCredentials: true,
-		AllowedMethods:   []string{"GET", "POST", "OPTIONS"},
+		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowedHeaders:   []string{"*"},
+		ExposedHeaders:   []string{"Content-Length"},
+		MaxAge:           86400, // 24 hours
 	}).Handler(srv)
 
 	http.Handle("/query", corsHandler)                         // ✅ CORS applied here
