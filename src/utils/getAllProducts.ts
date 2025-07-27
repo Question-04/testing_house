@@ -1,5 +1,3 @@
-import fetch from 'node-fetch';
-
 const GRAPHQL_ENDPOINT = process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT || 'https://testing-house.onrender.com/query';
 
 const ALL_PRODUCTS_QUERY = `
