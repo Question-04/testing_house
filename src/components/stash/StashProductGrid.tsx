@@ -71,7 +71,9 @@ const StashProductGrid: React.FC<StashProductGridProps> = ({ products }) => {
             return (
               <div
                 key={product.id}
-                ref={el => (cardRefs.current[idx] = el)}
+                ref={(el) => {
+                  cardRefs.current[idx] = el;
+                }}
                 onMouseEnter={() => setHoveredCardIndex(idx)}
                 onMouseLeave={() => setHoveredCardIndex(null)}
                 style={{
