@@ -262,8 +262,9 @@ func corsHandlerFunc(h http.HandlerFunc) http.Handler {
 var globalDB *sql.DB
 
 func main() {
+	// Load .env file if it exists, but don't fail if it doesn't
 	if err := godotenv.Load(); err != nil {
-		log.Fatal("❌ Error loading .env file")
+		log.Printf("⚠️ Warning: .env file not found, using environment variables from deployment platform")
 	}
 
 	port := os.Getenv("PORT")
@@ -273,7 +274,7 @@ func main() {
 
 	dbURL := os.Getenv("NEON_DB_URL")
 	if dbURL == "" {
-		log.Fatal("❌ NEON_DB_URL is not set in .env")
+		log.Fatal("❌ NEON_DB_URL is not set in environment variables")
 	}
 
 	db, err := sql.Open("postgres", dbURL)
