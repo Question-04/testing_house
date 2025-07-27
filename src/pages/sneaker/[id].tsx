@@ -22,19 +22,34 @@ const SNEAKER_QUERY = gql`
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const apolloClient = initializeApollo();
   const { id } = context.params!;
-  const { data } = await apolloClient.query({
-    query: SNEAKER_QUERY,
-    variables: { id },
-  });
+  
+  try {
+    const { data } = await apolloClient.query({
+      query: SNEAKER_QUERY,
+      variables: { id },
+    });
 
-  return {
-    props: {
-      sneaker: data.sneaker,
-      productId: id,
-      productType: 'sneaker',
-      initialApolloState: apolloClient.cache.extract(),
-    },
-  };
+    // If no product found, return 404
+    if (!data.sneaker) {
+      return {
+        notFound: true,
+      };
+    }
+
+    return {
+      props: {
+        sneaker: data.sneaker,
+        productId: id,
+        productType: 'sneaker',
+        initialApolloState: apolloClient.cache.extract(),
+      },
+    };
+  } catch (error) {
+    console.error('Error fetching sneaker:', error);
+    return {
+      notFound: true,
+    };
+  }
 };
 
 export default function SneakerProductSSRPage(props: any) {

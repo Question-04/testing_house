@@ -24,19 +24,34 @@ const APPAREL_QUERY = gql`
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const apolloClient = initializeApollo();
   const { id } = context.params!;
-  const { data } = await apolloClient.query({
-    query: APPAREL_QUERY,
-    variables: { id },
-  });
+  
+  try {
+    const { data } = await apolloClient.query({
+      query: APPAREL_QUERY,
+      variables: { id },
+    });
 
-  return {
-    props: {
-      product: data.apparelItem,
-      productId: id,
-      productType: 'apparel',
-      initialApolloState: apolloClient.cache.extract(),
-    },
-  };
+    // If no product found, return 404
+    if (!data.apparelItem) {
+      return {
+        notFound: true,
+      };
+    }
+
+    return {
+      props: {
+        apparel: data.apparelItem,
+        productId: id,
+        productType: 'apparel',
+        initialApolloState: apolloClient.cache.extract(),
+      },
+    };
+  } catch (error) {
+    console.error('Error fetching apparel:', error);
+    return {
+      notFound: true,
+    };
+  }
 };
 
 export default function ApparelProductSSRPage(props: any) {

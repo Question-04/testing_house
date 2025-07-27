@@ -110,6 +110,10 @@ func (r *queryResolver) Sneaker(ctx context.Context, id string) (*model.Sneaker,
 	var soldOut bool
 	var sellerName, sellerUrl *string
 	if err := row.Scan(&idVal, &brandVal, &productName, &sizePricesRaw, pq.Array(&images), &soldOut, &productLink, &sellerName, &sellerUrl); err != nil {
+		if err == sql.ErrNoRows {
+			// Return a more descriptive error for missing products
+			return nil, fmt.Errorf("product with id %s not found", id)
+		}
 		return nil, err
 	}
 	var sizePrices []model.SizePrice
@@ -201,15 +205,23 @@ func (r *queryResolver) Watches(ctx context.Context, brand *string, color *strin
 
 // Watch is the resolver for the watch field.
 func (r *queryResolver) Watch(ctx context.Context, id string) (*model.Watch, error) {
-	query := `SELECT id, brand, name, color, sale_price, market_price, images, link, seller_name, seller_url FROM watches WHERE id = $1`
+	query := `SELECT id, brand, name, color, sale_price, market_price, images, link, seller_name, seller_url, gender FROM watches WHERE id = $1`
 	row := r.DB.QueryRow(query, id)
 	var w model.Watch
 	var sellerName, sellerUrl *string
-	if err := row.Scan(&w.ID, &w.Brand, &w.Name, &w.Color, &w.SalePrice, &w.MarketPrice, pq.Array(&w.Images), &w.Link, &sellerName, &sellerUrl); err != nil {
+	var genderVal sql.NullString
+	if err := row.Scan(&w.ID, &w.Brand, &w.Name, &w.Color, &w.SalePrice, &w.MarketPrice, pq.Array(&w.Images), &w.Link, &sellerName, &sellerUrl, &genderVal); err != nil {
+		if err == sql.ErrNoRows {
+			// Return a more descriptive error for missing products
+			return nil, fmt.Errorf("product with id %s not found", id)
+		}
 		return nil, err
 	}
 	w.SellerName = sellerName
 	w.SellerURL = sellerUrl
+	if genderVal.Valid {
+		w.Gender = &genderVal.String
+	}
 	return &w, nil
 }
 
@@ -269,15 +281,15 @@ func (r *queryResolver) Perfumes(ctx context.Context, brand *string, fragranceFa
 
 // Perfume is the resolver for the perfume field.
 func (r *queryResolver) Perfume(ctx context.Context, id string) (*model.Perfume, error) {
-	query := `SELECT id, brand, title, fragrance_family, variants, images, url, seller_name, seller_url FROM perfumes WHERE id = $1`
+	query := `SELECT id, brand, title, fragrance_family, concentration, subcategory, variants, images, url, seller_name, seller_url FROM perfumes WHERE id = $1`
 	row := r.DB.QueryRow(query, id)
 	var p model.Perfume
-	var variantsRaw []byte
 	var sellerName, sellerUrl *string
-	if err := row.Scan(&p.ID, &p.Brand, &p.Title, &p.FragranceFamily, &variantsRaw, pq.Array(&p.Images), &p.URL, &sellerName, &sellerUrl); err != nil {
-		return nil, err
-	}
-	if err := json.Unmarshal(variantsRaw, &p.Variants); err != nil {
+	if err := row.Scan(&p.ID, &p.Brand, &p.Title, &p.FragranceFamily, &p.Concentration, &p.Subcategory, pq.Array(&p.Variants), pq.Array(&p.Images), &p.URL, &sellerName, &sellerUrl); err != nil {
+		if err == sql.ErrNoRows {
+			// Return a more descriptive error for missing products
+			return nil, fmt.Errorf("product with id %s not found", id)
+		}
 		return nil, err
 	}
 	p.SellerName = sellerName
@@ -366,12 +378,14 @@ func (r *queryResolver) Accessories(ctx context.Context, brand *string, subcateg
 func (r *queryResolver) Accessory(ctx context.Context, id string) (*model.Accessory, error) {
 	query := `SELECT id, brand, product_name, subcategory, gender, size_prices, images, in_stock, product_link, seller_name, seller_url FROM accessories WHERE id = $1`
 	row := r.DB.QueryRow(query, id)
-	var idVal, brandVal, productName, subcategoryVal, genderVal, productLink string
+	var a model.Accessory
 	var sizePricesRaw []byte
-	var images []string
-	var inStock bool
 	var sellerName, sellerUrl *string
-	if err := row.Scan(&idVal, &brandVal, &productName, &subcategoryVal, &genderVal, &sizePricesRaw, pq.Array(&images), &inStock, &productLink, &sellerName, &sellerUrl); err != nil {
+	if err := row.Scan(&a.ID, &a.Brand, &a.ProductName, &a.Subcategory, &a.Gender, &sizePricesRaw, pq.Array(&a.Images), &a.InStock, &a.ProductLink, &sellerName, &sellerUrl); err != nil {
+		if err == sql.ErrNoRows {
+			// Return a more descriptive error for missing products
+			return nil, fmt.Errorf("product with id %s not found", id)
+		}
 		return nil, err
 	}
 	var sizePrices []model.SizePrice
@@ -383,19 +397,10 @@ func (r *queryResolver) Accessory(ctx context.Context, id string) (*model.Access
 		spCopy := sp
 		sizePricesPtr = append(sizePricesPtr, &spCopy)
 	}
-	return &model.Accessory{
-		ID:          idVal,
-		Brand:       brandVal,
-		ProductName: productName,
-		Subcategory: subcategoryVal,
-		Gender:      genderVal,
-		SizePrices:  sizePricesPtr,
-		Images:      images,
-		InStock:     inStock,
-		ProductLink: productLink,
-		SellerName:  sellerName,
-		SellerURL:   sellerUrl,
-	}, nil
+	a.SizePrices = sizePricesPtr
+	a.SellerName = sellerName
+	a.SellerURL = sellerUrl
+	return &a, nil
 }
 
 // Apparel is the resolver for the apparel field.
@@ -479,12 +484,14 @@ func (r *queryResolver) Apparel(ctx context.Context, brand *string, subcategory 
 func (r *queryResolver) ApparelItem(ctx context.Context, id string) (*model.Apparel, error) {
 	query := `SELECT id, brand, product_name, subcategory, gender, size_prices, images, in_stock, product_link, seller_name, seller_url FROM apparel WHERE id = $1`
 	row := r.DB.QueryRow(query, id)
-	var idVal, brandVal, productName, subcategoryVal, genderVal, productLink string
+	var a model.Apparel
 	var sizePricesRaw []byte
-	var images []string
-	var inStock bool
 	var sellerName, sellerUrl *string
-	if err := row.Scan(&idVal, &brandVal, &productName, &subcategoryVal, &genderVal, &sizePricesRaw, pq.Array(&images), &inStock, &productLink, &sellerName, &sellerUrl); err != nil {
+	if err := row.Scan(&a.ID, &a.Brand, &a.ProductName, &a.Subcategory, &a.Gender, &sizePricesRaw, pq.Array(&a.Images), &a.InStock, &a.ProductLink, &sellerName, &sellerUrl); err != nil {
+		if err == sql.ErrNoRows {
+			// Return a more descriptive error for missing products
+			return nil, fmt.Errorf("product with id %s not found", id)
+		}
 		return nil, err
 	}
 	var sizePrices []model.SizePrice
@@ -496,19 +503,10 @@ func (r *queryResolver) ApparelItem(ctx context.Context, id string) (*model.Appa
 		spCopy := sp
 		sizePricesPtr = append(sizePricesPtr, &spCopy)
 	}
-	return &model.Apparel{
-		ID:          idVal,
-		Brand:       brandVal,
-		ProductName: productName,
-		Subcategory: subcategoryVal,
-		Gender:      genderVal,
-		SizePrices:  sizePricesPtr,
-		Images:      images,
-		InStock:     inStock,
-		ProductLink: productLink,
-		SellerName:  sellerName,
-		SellerURL:   sellerUrl,
-	}, nil
+	a.SizePrices = sizePricesPtr
+	a.SellerName = sellerName
+	a.SellerURL = sellerUrl
+	return &a, nil
 }
 
 // AllSneakerBrands is the resolver for the allSneakerBrands field.

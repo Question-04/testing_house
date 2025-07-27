@@ -24,19 +24,34 @@ const PERFUME_QUERY = gql`
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const apolloClient = initializeApollo();
   const { id } = context.params!;
-  const { data } = await apolloClient.query({
-    query: PERFUME_QUERY,
-    variables: { id },
-  });
+  
+  try {
+    const { data } = await apolloClient.query({
+      query: PERFUME_QUERY,
+      variables: { id },
+    });
 
-  return {
-    props: {
-      product: data.perfume,
-      productId: id,
-      productType: 'perfume',
-      initialApolloState: apolloClient.cache.extract(),
-    },
-  };
+    // If no product found, return 404
+    if (!data.perfume) {
+      return {
+        notFound: true,
+      };
+    }
+
+    return {
+      props: {
+        perfume: data.perfume,
+        productId: id,
+        productType: 'perfume',
+        initialApolloState: apolloClient.cache.extract(),
+      },
+    };
+  } catch (error) {
+    console.error('Error fetching perfume:', error);
+    return {
+      notFound: true,
+    };
+  }
 };
 
 export default function PerfumeProductSSRPage(props: any) {

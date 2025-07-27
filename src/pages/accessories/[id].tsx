@@ -24,21 +24,36 @@ const ACCESSORY_QUERY = gql`
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const apolloClient = initializeApollo();
   const { id } = context.params!;
-  const { data } = await apolloClient.query({
-    query: ACCESSORY_QUERY,
-    variables: { id },
-  });
+  
+  try {
+    const { data } = await apolloClient.query({
+      query: ACCESSORY_QUERY,
+      variables: { id },
+    });
 
-  return {
-    props: {
-      product: data.accessory,
-      productId: id,
-      productType: 'accessories',
-      initialApolloState: apolloClient.cache.extract(),
-    },
-  };
+    // If no product found, return 404
+    if (!data.accessory) {
+      return {
+        notFound: true,
+      };
+    }
+
+    return {
+      props: {
+        accessory: data.accessory,
+        productId: id,
+        productType: 'accessory',
+        initialApolloState: apolloClient.cache.extract(),
+      },
+    };
+  } catch (error) {
+    console.error('Error fetching accessory:', error);
+    return {
+      notFound: true,
+    };
+  }
 };
 
-export default function AccessoriesProductSSRPage(props: any) {
+export default function AccessoryProductSSRPage(props: any) {
   return <ProductPage {...props} />;
 } 

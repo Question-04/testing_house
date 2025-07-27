@@ -24,19 +24,34 @@ const WATCH_QUERY = gql`
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const apolloClient = initializeApollo();
   const { id } = context.params!;
-  const { data } = await apolloClient.query({
-    query: WATCH_QUERY,
-    variables: { id },
-  });
+  
+  try {
+    const { data } = await apolloClient.query({
+      query: WATCH_QUERY,
+      variables: { id },
+    });
 
-  return {
-    props: {
-      product: data.watch,
-      productId: id,
-      productType: 'watch',
-      initialApolloState: apolloClient.cache.extract(),
-    },
-  };
+    // If no product found, return 404
+    if (!data.watch) {
+      return {
+        notFound: true,
+      };
+    }
+
+    return {
+      props: {
+        watch: data.watch,
+        productId: id,
+        productType: 'watch',
+        initialApolloState: apolloClient.cache.extract(),
+      },
+    };
+  } catch (error) {
+    console.error('Error fetching watch:', error);
+    return {
+      notFound: true,
+    };
+  }
 };
 
 export default function WatchProductSSRPage(props: any) {
