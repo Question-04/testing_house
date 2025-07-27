@@ -115,26 +115,11 @@ jspm_packages/
 # TernJS port file
 .tern-port
 
-# Large media files that can be downloaded during build
-public/collection/.next/
-public/collection/.next/cache/
-public/collection/.next/server/
-public/collection/.next/static/
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
 
-# Temporary files
-*.tmp
-*.temp
+# Seeding folder (exclude as requested)
+seeding/
+plutus-backend/seeding/
 
-# Backup files
-*.bak
-*.backup
 
-# Large video files (optional - remove if you need them)
-public/*.mp4
-public/*.webm
-public/herosection/*.webm
-public/tictock/*.webm
-
-# Large image collections (optional - remove if you need them)
-public/clean_sneakers/
-public/images2/
