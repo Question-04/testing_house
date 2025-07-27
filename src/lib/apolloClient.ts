@@ -4,12 +4,17 @@ import { useMemo } from 'react';
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null;
 
 function createApolloClient() {
+  const isServer = typeof window === 'undefined';
+  const uri = process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT || 'https://testing-house.onrender.com/query';
+  
+  console.log('Creating Apollo client:', { isServer, uri });
+  
   return new ApolloClient({
-    ssrMode: typeof window === 'undefined',
+    ssrMode: isServer,
     link: new HttpLink({
-      uri: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT || 'https://testing-house.onrender.com/query',
+      uri,
       credentials: 'same-origin',
-      fetch: typeof window === 'undefined' ? undefined : fetch,
+      fetch: isServer ? undefined : fetch,
     }),
     cache: new InMemoryCache(),
     defaultOptions: {

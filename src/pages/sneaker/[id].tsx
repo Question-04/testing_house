@@ -20,17 +20,18 @@ const SNEAKER_QUERY = gql`
 `;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const apolloClient = initializeApollo();
-  const { id } = context.params!;
-  
-  // Debug environment variables
-  console.log('Environment variables:', {
-    NEXT_PUBLIC_GRAPHQL_ENDPOINT: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT,
-    NODE_ENV: process.env.NODE_ENV,
-  });
-  
   try {
+    const apolloClient = initializeApollo();
+    const { id } = context.params!;
+    
+    // Debug environment variables
+    console.log('Environment variables:', {
+      NEXT_PUBLIC_GRAPHQL_ENDPOINT: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT,
+      NODE_ENV: process.env.NODE_ENV,
+    });
+    
     console.log('Fetching sneaker with ID:', id);
+    
     const { data } = await apolloClient.query({
       query: SNEAKER_QUERY,
       variables: { id },
@@ -55,13 +56,31 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       },
     };
   } catch (error) {
-    console.error('Error fetching sneaker:', error);
+    console.error('Error in getServerSideProps:', error);
+    
+    // Return a more graceful error response
     return {
-      notFound: true,
+      props: {
+        error: error instanceof Error ? error.message : 'Unknown error',
+        productId: context.params?.id,
+        productType: 'sneaker',
+      },
     };
   }
 };
 
 export default function SneakerProductSSRPage(props: any) {
+  // Handle SSR error
+  if (props.error) {
+    console.error('SSR Error:', props.error);
+    return (
+      <div style={{ padding: '20px', textAlign: 'center' }}>
+        <h1>Error Loading Product</h1>
+        <p>{props.error}</p>
+        <p>Product ID: {props.productId}</p>
+      </div>
+    );
+  }
+  
   return <ProductPage {...props} />;
 } 
