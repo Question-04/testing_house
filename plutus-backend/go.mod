@@ -1,10 +1,10 @@
 module plutus-backend
 
-go 1.24.5
+go 1.24.4
 
 require (
 	github.com/99designs/gqlgen v0.17.76
-	github.com/joho/godotenv v1.5.1
+	github.com/joho/godotenv v1.4.0
 	github.com/lib/pq v1.10.9
 	github.com/rs/cors v1.11.1
 	github.com/urfave/cli/v2 v2.27.7
