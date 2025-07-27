@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+/* GLOBAL RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* BROWSER DEFAULT OVERRIDE */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  font-size: 100% !important;
+  vertical-align: baseline !important;
+  background: #000 !important;
+  min-height: 100vh !important;
+  width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* BODY & HTML */
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background: #000;
+  color: #fff;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent vertical scroll bleeding during horizontal pin */
+html, body {
+  height: auto;
+  min-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* PAGE WRAPPER */
+.homePage {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+/* SCROLLBAR STYLE */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+/* SECTION DEFAULT FIX */
+section,
+div,
+main {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* MAIN ELEMENT FIX */
+main {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  background: #000;
+  min-height: 100vh;
+}
+
+/* NEXT.JS WRAPPER FIX */
+#__next {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  background: #000;
+  min-height: 100vh;
+}
+
+/* SWIPER GLOBAL STYLES - Required for swiper to work properly */
+.swiper-pagination {
+  display: flex !important;
+  justify-content: center;
+  position: relative !important;
+  margin-top: 10rem;
+  gap: 2rem;
+  z-index: 5;
+}
+
+@media (max-width: 768px) {
+  .swiper-pagination {
+    margin-top: 9rem;
+    gap: 1rem;
+  }
+}
+
+.swiper-pagination-bullet {
+  width: 120px;
+  height: 150px;
+  background: none;
+  padding: 0;
+  border: none;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .swiper-pagination-bullet {
+    width: 80px;
+    height: 100px;
+  }
+}
+
+.swiper-pagination-bullet img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.swiper-pagination-bullet-active {
+  transform: translateY(-15px);
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .swiper-pagination-bullet-active {
+    transform: translateY(-10px);
+  }
+}
+
+.swiper-pagination-bullet-active::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 20px;
+  background: radial-gradient(ellipse at center, rgba(4, 4, 4, 0.543) 0%, transparent 100%);
+  border-radius: 50%;
+  filter: blur(4px);
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .swiper-pagination-bullet-active::after {
+    width: 60px;
+    height: 15px;
+    bottom: -8px;
+  }
+}

@@ -1,0 +1,268 @@
+# Test Queries for Plutus Backend
+# Backend URL: https://testing-house.onrender.com/query
+
+# 1. Test Sneakers
+query GetSneakers {
+  sneakers(limit: 5) {
+    id
+    brand
+    productName
+    sizePrices {
+      size
+      price
+    }
+    images
+    soldOut
+    productLink
+    sellerName
+    sellerUrl
+  }
+}
+
+# 2. Test Sneakers by Brand
+query GetSneakersByBrand {
+  sneakers(brand: "Nike", limit: 3) {
+    id
+    brand
+    productName
+    sizePrices {
+      size
+      price
+    }
+    images
+    soldOut
+  }
+}
+
+# 3. Test Watches
+query GetWatches {
+  watches(limit: 5) {
+    id
+    brand
+    name
+    color
+    salePrice
+    marketPrice
+    images
+    link
+    sellerName
+    sellerUrl
+    gender
+  }
+}
+
+# 4. Test Watches by Brand
+query GetWatchesByBrand {
+  watches(brand: "Rolex", limit: 3) {
+    id
+    brand
+    name
+    color
+    salePrice
+    marketPrice
+    images
+  }
+}
+
+# 5. Test Perfumes
+query GetPerfumes {
+  perfumes(limit: 5) {
+    id
+    brand
+    title
+    fragranceFamily
+    concentration
+    subcategory
+    variants {
+      size
+      price
+    }
+    images
+    url
+    sellerName
+    sellerUrl
+  }
+}
+
+# 6. Test Perfumes by Brand
+query GetPerfumesByBrand {
+  perfumes(brand: "Chanel", limit: 3) {
+    id
+    brand
+    title
+    fragranceFamily
+    concentration
+    images
+  }
+}
+
+# 7. Test Accessories
+query GetAccessories {
+  accessories(limit: 5) {
+    id
+    brand
+    productName
+    subcategory
+    gender
+    sizePrices {
+      size
+      price
+    }
+    images
+    inStock
+    productLink
+    sellerName
+    sellerUrl
+  }
+}
+
+# 8. Test Apparel
+query GetApparel {
+  apparel(limit: 5) {
+    id
+    brand
+    productName
+    subcategory
+    gender
+    sizePrices {
+      size
+      price
+    }
+    images
+    inStock
+    productLink
+    sellerName
+    sellerUrl
+  }
+}
+
+# 9. Test All Brands
+query GetAllBrands {
+  allSneakerBrands
+  allWatchBrands
+  allPerfumeBrands
+  allAccessoryBrands
+  allApparelBrands
+}
+
+# 10. Test Search Functionality
+query SearchSneakers {
+  sneakers(search: "Jordan", limit: 3) {
+    id
+    brand
+    productName
+    sizePrices {
+      size
+      price
+    }
+    images
+  }
+}
+
+# 11. Test Price Filtering
+query GetSneakersByPrice {
+  sneakers(minPrice: 100, maxPrice: 500, limit: 3) {
+    id
+    brand
+    productName
+    sizePrices {
+      size
+      price
+    }
+  }
+}
+
+# 12. Test Single Item Queries
+query GetSingleSneaker {
+  sneaker(id: "1") {
+    id
+    brand
+    productName
+    sizePrices {
+      size
+      price
+    }
+    images
+    soldOut
+    productLink
+  }
+}
+
+query GetSingleWatch {
+  watch(id: "1") {
+    id
+    brand
+    name
+    color
+    salePrice
+    marketPrice
+    images
+  }
+}
+
+query GetSinglePerfume {
+  perfume(id: "1") {
+    id
+    brand
+    title
+    fragranceFamily
+    concentration
+    images
+  }
+}
+
+query GetSingleAccessory {
+  accessory(id: "1") {
+    id
+    brand
+    productName
+    subcategory
+    gender
+    sizePrices {
+      size
+      price
+    }
+    images
+  }
+}
+
+query GetSingleApparel {
+  apparelItem(id: "1") {
+    id
+    brand
+    productName
+    subcategory
+    gender
+    sizePrices {
+      size
+      price
+    }
+    images
+  }
+}
+
+# 13. Test Categories and Subcategories
+query GetCategories {
+  allSneakerSubcategories
+  allApparelSubcategories
+  allAccessorySubcategories
+  allWatchSubcategories
+  allPerfumeSubcategories
+  allApparelGenders
+  allAccessoryGenders
+  allWatchGenders
+  allSneakerGenders
+  allPerfumeGenders
+  allPerfumeFragranceFamilies
+}
+
+# 14. Test Mutation (Create Enquiry)
+mutation CreateEnquiry {
+  createEnquiry(
+    productId: "test-123"
+    productName: "Test Product"
+    productBrand: "Test Brand"
+    productImage: "https://example.com/image.jpg"
+    contact: "test@example.com"
+  )
+} 

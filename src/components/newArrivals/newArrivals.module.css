@@ -1,0 +1,280 @@
+.newArrivals {
+  padding: 40px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: 'TIMES NEW NORMAL';
+}
+
+.newArrivals__title {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-top: 50px;
+  margin-bottom: 80px; /* reduced gap above cards */
+  color: #051f2d;
+  text-transform: uppercase;
+}
+
+.newArrivals__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px; /* slightly reduced gap between cards */
+  max-width: 1500px;
+
+  margin: 0 auto 120px; /* add bottom gap before next section */
+}
+
+.card {
+  background: white;
+  border-radius: 0px;
+  border: 1px solid #e0e0e0; /* subtle border around each card */
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card__imageContainer {
+  position: relative;
+  height: 500px; /* slightly smaller */
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.card__progressBars {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+
+.progressBar {
+  flex: 1;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressBar__fill {
+  height: 100%;
+  background: rgb(8, 7, 7);
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}
+
+.progressBar__fill.completed {
+  background: rgba(23, 23, 23, 0.8);
+  width: 100% !important;
+}
+
+.progressBar__fill.active {
+  background: rgb(8, 8, 8);
+}
+
+.card__images {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.card__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(1.05); /* slightly zoomed initially */
+  transition: none;
+  z-index: 1;
+  background: #ffffff; /* ensure transparent PNGs sit on white so layers don’t bleed */
+}
+
+/* Currently visible image */
+.card__image.active {
+  animation: fadeSlideUpIn 0.6s ease forwards;
+  z-index: 2;
+}
+
+/* Image fading out - previous one stays visible during transition */
+.card__image.fade-out {
+  animation: fadeZoomOut 0.6s ease forwards;
+  z-index: 0; /* ensure previous image sits beneath new one to avoid glimpse */
+}
+
+/* Image itself */
+.card__image img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain; /* maintain aspect ratio while adding some whitespace */
+  display: block;
+  margin: auto; /* center the image within the container */
+  pointer-events: none;
+}
+
+/* Active new image animation */
+@keyframes fadeSlideUpIn {
+  0% {
+    opacity: 0;
+    transform: translateY(15%) scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateY(5%) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%) scale(1);
+  }
+}
+
+/* Previous image animates out */
+@keyframes fadeZoomOut {
+  0% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(1.1);
+  }
+}
+
+/* Quick View */
+.card__quickView {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: #051f2d;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.card:hover .card__quickView {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.quickViewBtn {
+  background: none;
+  border: none;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  font-family: monospace;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Optional Title */
+.card__content {
+  padding: 25px 20px;
+  text-align: center;
+}
+
+.card__title {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #333;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .newArrivals {
+    padding: 20px 15px;
+  }
+
+  .newArrivals__title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .newArrivals__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card__imageContainer {
+    height: 400px;
+  }
+
+  .card__content {
+    padding: 20px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .newArrivals__title {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+
+  .card__imageContainer {
+    height: 350px;
+  }
+
+  .quickViewBtn {
+    padding: 10px 25px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 600px) {
+  .newArrivals__title {
+    font-size: 2rem;
+    margin-top: 32px;
+    margin-bottom: 48px;
+  }
+  .newArrivals__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 100vw;
+    padding: 0 8px;
+  }
+  .card {
+    border-radius: 0px;
+    min-width: 180;
+  }
+  .card__imageContainer {
+    height: 320px;
+  }
+  .card__quickView {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    height: 35px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

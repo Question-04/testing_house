@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: plutus-backend
+    env: go
+    buildCommand: go build -o server .
+    startCommand: ./server
+    envVars:
+      - key: NEON_DB_URL
+        sync: false
+      - key: PORT
+        value: 10000 

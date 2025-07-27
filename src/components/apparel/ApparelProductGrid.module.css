@@ -1,0 +1,217 @@
+@media (max-width: 900px) {
+  .gridMobile {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 8px;
+    padding: 10px 0;
+  }
+  .gridMobile .card {
+    height: 380px !important;
+    min-height: 380px !important;
+  }
+  .gridMobile .imageWrapper {
+    height: 220px !important;
+    margin-bottom: 50px !important;
+  }
+  .gridMobile .image {
+    width: 200px !important;
+    height: 160px !important;
+  }
+  .gridMobile .info {
+    min-height: 70px !important;
+    padding: 16px 14px 12px 14px !important;
+  }
+  .gridMobile .name{
+    font-size: 0.75rem !important;
+  }
+  .gridMobile .brand{
+    font-size: 0.7rem !important;
+  }
+}
+/* Mobile grid style copied from sneaker grid */
+.gridMobile {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 8px;
+  padding: 10px 0;
+  width: 100%;
+  max-width: 100vw;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px 0px;
+  padding: 32px 0;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.card {
+  width: 96%;
+  height: 340px;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background: #fff;
+  border: 1px solid #e0e6ed;
+  box-shadow: 0 2px 12px rgba(30,40,90,0.08);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-sizing: border-box;
+  border-radius: 0;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(30,40,90,0.12);
+}
+
+.card, .card:visited, .card:active, .card:focus {
+  text-decoration: none !important;
+  color: inherit !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-bottom: none !important;
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  margin-bottom: 24px;
+  z-index: 2;
+}
+
+.image {
+  width: 200px;
+  height: 180px;
+  object-fit: contain;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+  margin: 0 auto;
+}
+
+.info {
+  width: 92%;
+  min-height: 70px;
+  background: #0d1a2f;
+  border-radius: 0;
+  padding: 16px 18px 12px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  z-index: 1;
+}
+.infoText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  max-width: 100%;
+  justify-content: flex-start;
+  height: auto;
+}
+.brand {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 0.75rem;
+  color: #fff;
+  font-weight: 500;
+  opacity: 0.85;
+  margin-bottom: 0;
+  line-height: 1.4;
+  align-self: flex-start;
+  white-space: nowrap;
+}
+.name {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 0.65rem;
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 0;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+  align-self: flex-start;
+}
+.priceRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  justify-content: space-between;
+  width: 100%;
+}
+.startingFrom {
+  font-size: 0.8rem;
+  color: #b0b8c9;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.price {
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 500;
+  font-family: 'Montserrat';
+  margin-bottom: 0;
+}
+.brand, .name, .startingFrom, .price {
+  font-family: 'Montserrat';
+}
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 12px;
+  }
+  .card {
+    height: 220px;
+  }
+  .imageWrapper {
+    height: 100px;
+  }
+  .image {
+    width: 80px;
+    height: 80px;
+  }
+  .info {
+    min-height: 48px;
+    padding: 10px 8px 8px 8px;
+  }
+}
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 14px 0;
+    padding: 12px 0;
+  }
+  .card {
+    height: 180px;
+  }
+  .imageWrapper {
+    height: 60px;
+  }
+  .image {
+    width: 50px;
+    height: 50px;
+  }
+  .info {
+    min-height: 36px;
+    padding: 8px 6px 6px 6px;
+  }
+} 

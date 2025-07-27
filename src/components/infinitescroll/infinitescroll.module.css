@@ -1,0 +1,217 @@
+.sectionCustom {
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #000609 0%, #051f2d 100%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.sectionCustom::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('/perfumes.jpg') center/cover no-repeat;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.sectionTitle {
+  color: #fff;
+  font-family: 'Times New Roman', 'monsterra';
+  font-size: 4rem;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 48px;
+  margin-bottom: 32px;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.cardsRow {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0px;
+  width: 100vw;
+  max-width: 1600px;
+  z-index: 1;
+}
+
+.cardTiltLeft, .cardTiltRight, .cardCenter {
+  position: relative;
+  margin-top: 6%;
+  border-radius: 0px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  background: #fff;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.cardTiltLeft, .cardTiltRight {
+  width: 370px;
+  height: 500px;
+  top: 30px;
+
+
+  z-index: 3;
+}
+
+.cardTiltLeft {
+  transform: rotate(-14deg);
+  left: 30px;
+}
+.cardTiltRight {
+  transform: rotate(14deg);
+  right: 30px;
+}
+.cardCenter {
+  width: 840px;
+  height: 550px;
+  background: #e6e6e6;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.cardImageStatic {
+  object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 0px;
+}
+
+.cardCta {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0d2538;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 0px;
+  font-size: 1.1rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  z-index: 2;
+  white-space: nowrap;
+}
+
+.ctaMain {
+  margin-top: 38px;
+  background: #c7a77b;
+  color: #23313a;
+  padding: 16px 38px;
+  border-radius: 0px;
+  font-size: 1.2rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  cursor: pointer;
+  text-decoration: none;
+  z-index: 2;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.ctaMain:hover {
+  background: #b18d5b;
+  text-decoration: none;
+}
+
+@media (max-width: 700px) {
+  .sectionCustom {
+    padding: 0;
+    min-height: 50vh;
+    height: 50vh;
+    width: 100vw;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: linear-gradient(180deg, #000609 0%, #051f2d 80%);
+  }
+  .sectionTitle {
+    font-size: 1.9rem;
+    margin-top: 52px;
+    margin-bottom: 18px;
+    text-align: center;
+  }
+  .cardsRow {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 0;
+    width: 100vw;
+    max-width: 100vw;
+    margin: 40px 0 0 0;
+    position: relative;
+    z-index: 2;
+    min-height: 160px;
+  }
+  .cardTiltLeft, .cardTiltRight {
+    width: 42vw;
+    max-width: 200px;
+    height: 140px;
+    border-radius: 0px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+    position: relative;
+    top: 10px;
+    background: #fff;
+  }
+  .cardTiltLeft {
+    transform: rotate(-20deg) scale(1);
+    margin-right: 30px;
+    z-index: 3;
+  }
+  .cardTiltRight {
+    transform: rotate(20deg) scale(1);
+    margin-left: 30px;
+    z-index: 3;
+  }
+  .cardCenter {
+    width: 80vw;
+    max-width: 480px;
+    height: 160px;
+    z-index: 2;
+    background: #e6e6e6;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+    position: relative;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cardImageStatic {
+    border-radius: 0px;
+  }
+  .cardCta {
+    font-size: 0.4rem;
+    font-weight: 400;
+    padding: 4px 8px;
+    border-radius: 0px;
+    bottom: 10px;
+  }
+  .ctaMain {
+    margin-top: 32px;
+    font-size: 0.6rem;
+    padding: 8px 8px;
+    border-radius: 0px;
+    min-width: 30vw;
+    text-align: center;
+    z-index: 3;
+    position: relative;
+  }
+}
+
