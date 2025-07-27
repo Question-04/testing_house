@@ -2,7 +2,6 @@ import js from '@eslint/js';
 import tseslint from '@typescript-eslint/eslint-plugin';
 import tsparser from '@typescript-eslint/parser';
 import reactHooks from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh';
 import nextPlugin from '@next/eslint-plugin-next';
 
 export default [
@@ -12,7 +11,6 @@ export default [
     plugins: {
       '@typescript-eslint': tseslint,
       'react-hooks': reactHooks,
-      'react-refresh': reactRefresh,
       '@next/next': nextPlugin,
     },
     languageOptions: {
@@ -35,7 +33,6 @@ export default [
       'react/no-unescaped-entities': 'warn', // Changed from 'error' to 'warn'
       '@next/next/no-html-link-for-pages': 'warn', // Changed from 'error' to 'warn'
       'react-hooks/rules-of-hooks': 'error', // Keep this as error
-      'react-refresh/only-export-components': 'warn',
     },
   },
 ];

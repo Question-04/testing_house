@@ -93,8 +93,11 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
       }
     });
 
-    return () => tl.kill();
-  }, []);
+    // Return cleanup function that returns void
+    return () => {
+      tl.kill();
+    };
+  }, [images, onComplete]);
 
   return (
     <>
